@@ -1,0 +1,58 @@
+<div class="contact-wrap" id="contact">
+  <div class="card-container">
+    <div class="contact-card">
+      <div class="image-container">
+        <img src="../../../../assets/Rectangle 22.png" alt="" />
+      </div>
+      <div class="contact-info">
+        <div class="name">
+          <img class="name-img" src="../../../../assets/Frame 1.png" alt="" />
+        </div>
+        <div class="description">
+          AI specialist on a mission to build AI applications that address
+          real-world problems and enhance people's lives, while making this
+          technology as understandable and available to as many people as
+          possible.
+        </div>
+        <div class="socials">
+          <div class="social" *ngFor="let c of contacts">
+            <img
+              [src]="'../../../../assets/' + c.icon + '.png'"
+              alt=""
+              class="icon"
+            />
+            <span class="username">{{ c.username }}</span>
+          </div>
+        </div>
+      </div>
+      <img
+        class="download"
+        src="../../../../assets/Vector download.png"
+        alt=""
+      />
+    </div>
+    <div class="contact-me">
+      <div class="email">email</div>
+      Contact Me
+    </div>
+    <div class="contact-me two">
+      <div class="email">email</div>
+      Contact Me
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left-footer">
+      <img src="../../../../assets/Frame 1.png" alt="" />
+      <div class="info">AI Specialist and Consultant</div>
+    </div>
+    <div class="right-footer">
+      <div class="links">
+        <div>Home</div>
+        <div>About</div>
+        <div>Services</div>
+        <div>Blog</div>
+      </div>
+    </div>
+  </div>
+</div>

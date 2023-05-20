@@ -1,0 +1,19 @@
+.about-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 56.25vw;
+  width: 100%;
+  margin: 0;
+
+  h1 {
+    font-family: "Walter-Light", sans-serif;
+
+    font-size: 3vw;
+    span {
+      color: #fdda44;
+    }
+  }
+}

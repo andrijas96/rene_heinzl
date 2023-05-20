@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap");
+
+@font-face {
+  font-family: "Walter";
+  src: local("Walter"),
+    url(./assets/fonts/Walter/Walter-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Walter-Light";
+  src: local("Walter-Light"),
+    url(./assets/fonts/Walter/Walter-Light.ttf) format("truetype");
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
