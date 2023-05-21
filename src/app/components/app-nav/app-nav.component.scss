@@ -1,17 +1,16 @@
 .nav-wrap {
   height: 6vw;
-
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 60px;
+  margin: 0 3vw;
   position: fixed;
   top: 0;
   z-index: 2;
 
   h2 {
-    font-family: "Walter-Light", sans-serif;
+    font-family: 'Walter-Light', sans-serif;
     color: #fff;
     letter-spacing: 0.1vw;
     font-size: 1.5vw;
@@ -28,6 +27,7 @@
     justify-content: space-around;
     align-items: center;
     color: #fff;
+    margin: 0 3vw;
     a {
       text-decoration: none;
       color: #fff;
