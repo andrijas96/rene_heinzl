@@ -1,13 +1,15 @@
-<div class="about-card-wrap" [ngClass]="{ show: show }">
-  <!-- [ngStyle]="{ backgroundImage: 'url(../../../../assets/about1.jpg)' }" -->
-  <img class="cover" src="../../../../assets/about1.jpg" alt="" />
-  <div class="img-container" (click)="show = !show">
-    <img src="../../../../assets/about1.jpg" alt="" />
+<div
+  class="about-card-wrap"
+  [ngClass]="{ show: data.show }"
+  [ngStyle]="{ zIndex: 5 - data.id }"
+>
+  <div class="img-cover-container">
+    <img class="cover" [src]="data.url" alt="" />
+  </div>
+  <div class="img-container" (click)="onShow(data.id)">
+    <img [src]="data.url" alt="" />
   </div>
   <div class="info">
-    I’m a tech-savvy entrepreneur who is always on the move and enjoys taking on
-    responsibilities and solving problems as they arise. My passion for
-    technology was evident from a young age, particularly when I successfully
-    created a simple jump-and-run game using GW Basic at the age of 10.
+    {{ data.text }}
   </div>
 </div>

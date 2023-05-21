@@ -1,4 +1,11 @@
 <div class="about-wrap" id="about">
   <h1>Get to know <span>Rene Heinzl</span></h1>
-  <about-card></about-card>
+  <div class="cards">
+    <about-card
+      [data]="d"
+      *ngFor="let d of data; let id = index"
+      [ngStyle]="{ zIndex: d.show ? 5 : data.length - id }"
+      (setShow)="handleShow(id)"
+    ></about-card>
+  </div>
 </div>

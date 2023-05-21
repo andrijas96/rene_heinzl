@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'about-card',
@@ -6,8 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about-card.component.scss'],
 })
 export class AboutCardComponent implements OnInit {
-  show: boolean = false;
+  @Input()
+  data!: { id: number; url: string; text: string; show: boolean };
+
+  @Output()
+  setShow: EventEmitter<number> = new EventEmitter<number>();
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  onShow(id: number) {
+    this.data.show ? (this.data.show = false) : this.setShow.emit(id);
+  }
 }
