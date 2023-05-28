@@ -22,7 +22,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: blur(6px) brightness(0.3);
+      filter: blur(0.3vw) brightness(0.3);
     }
   }
 
@@ -65,9 +65,12 @@
 
     .info {
       width: 33vw;
-      padding: 5vh;
+      padding: 2vw;
       z-index: 3;
       opacity: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
