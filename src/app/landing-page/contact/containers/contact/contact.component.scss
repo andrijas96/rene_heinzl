@@ -90,7 +90,7 @@
     }
 
     .contact-me {
-      font-family: "Walter", sans-serif;
+      font-family: 'Walter', sans-serif;
       position: absolute;
       display: flex;
       align-items: center;
@@ -102,7 +102,7 @@
       min-width: 100%;
 
       .email {
-        font-family: "Space Grotesk", sans-serif;
+        font-family: 'Space Grotesk', sans-serif;
         font-size: 1.2vw;
         color: #06182f;
         width: 7vw;
@@ -135,13 +135,18 @@
 
   .footer {
     position: relative;
-    width: 100vw;
-    height: 21vw;
     left: 0px;
     bottom: 0px;
+    width: 100vw;
+    height: 21vw;
     background: #00040a;
-
     text-align: left;
+
+    .line {
+      border-top: 0.05vw solid rgba(137, 165, 198, 0.8);
+      box-shadow: 0px 0px 2vw 0.2vw rgba(137, 165, 198, 0.8);
+    }
+
     .left-footer {
       position: absolute;
       top: 7.1vw;

@@ -5,7 +5,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #181818;
+  background: #010a17;
+
+  .noise {
+    background: url(../../../../assets/NOISE.png);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    pointer-events: none;
+
+    .line {
+      border-right: 0.001vw solid rgba(255, 255, 255, 0.05);
+      height: 100%;
+    }
+  }
 
   .video-and-other {
     position: absolute;
@@ -19,16 +37,25 @@
     overflow: hidden;
 
     .video-wrapper {
-      filter: brightness(0.3);
-      #video-background {
+      #background-video {
         width: 100%;
-        height: 100%;
+        height: 63vw;
         object-fit: cover;
       }
+      #background-sphere {
+        width: 100%;
+        height: 63vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        opacity: 0.9;
+      }
     }
+
     .other-background {
       width: 155vw;
-      background: #181818;
+      background: #010a17;
       height: 34vw;
       position: absolute;
       bottom: -30vw;
@@ -36,7 +63,7 @@
       transform: translateX(-50%);
       z-index: 2;
       border-radius: 50%;
-      box-shadow: 0.3vw 1vw 4vw 0.3vw #fff;
+      box-shadow: 0.3vw 6vw 8vw 4.3vw #999;
     }
   }
 }
