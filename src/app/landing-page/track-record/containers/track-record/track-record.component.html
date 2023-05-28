@@ -1,0 +1,20 @@
+<div class="track-record-wrap">
+  <div class="cards">
+    <h2>Professional Track Record</h2>
+    <track-card *ngFor="let card of data; let id = index">
+      <img class="card-img" [src]="card.url" alt="" />
+      <p>
+        {{ card.text }}
+        <img
+          *ngIf="id + 1 == data.length"
+          src="../../../../assets/Vector 3.png"
+          alt=""
+        />
+      </p>
+      <div class="learn-more" *ngIf="id + 1 !== data.length">
+        Learn More
+        <img src="../../../../assets/Vector 3.png" alt="" />
+      </div>
+    </track-card>
+  </div>
+</div>

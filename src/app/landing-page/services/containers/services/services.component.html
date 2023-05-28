@@ -1,0 +1,56 @@
+<div class="services-wrap" id="services">
+  <div class="container">
+    <div class="left">
+      <h2>Services</h2>
+      <div class="card">
+        <div class="card-title">
+          {{ currentService.title }}
+          <div class="card-title-info">
+            <div class="eclipse"></div>
+            {{ currentService.subtitle }}
+          </div>
+        </div>
+        <p class="info" *ngIf="nextInfo">
+          {{ currentService.info[0] }}
+        </p>
+        <p class="info" *ngIf="!nextInfo">
+          {{ currentService.info[1] }}
+        </p>
+        <div class="next" *ngIf="nextInfo" (click)="nextInfo = false">Next</div>
+        <div class="next" *ngIf="!nextInfo" (click)="nextInfo = true">Back</div>
+      </div>
+    </div>
+    <div class="right">
+      <div
+        class="image-container one"
+        (click)="setCurrent(1)"
+        [ngClass]="{ showOne: showOne }"
+      >
+        <img
+          src="../../../../assets/Kopie von 230201-ReneHeinzl-Manevera-Shooting-030.jpg"
+          alt=""
+        />
+      </div>
+      <div
+        class="image-container two"
+        (click)="setCurrent(2)"
+        [ngClass]="{ showTwo: showTwo }"
+      >
+        <img
+          src="../../../../assets/Kopie von 230201-ReneHeinzl-Manevera-Shooting-024.jpg"
+          alt=""
+        />
+      </div>
+      <div
+        class="image-container three"
+        (click)="setCurrent(3)"
+        [ngClass]="{ showThree: showThree }"
+      >
+        <img
+          src="../../../../assets/Kopie von 230201-ReneHeinzl-Manevera-Shooting-052.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</div>

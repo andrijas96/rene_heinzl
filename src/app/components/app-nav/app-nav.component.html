@@ -1,8 +1,8 @@
 <div class="nav-wrap">
   <h2>Rene <span>Heinzl</span></h2>
   <div class="link-container">
-    <a *ngFor="let l of links" (click)="navigateToSection(l)">{{
-      l[0].toUpperCase() + l.slice(1, l.length)
+    <a *ngFor="let link of links" (click)="navigateToSection(link)">{{
+      link[0].toUpperCase() + link.slice(1, link.length)
     }}</a>
 
     <button (click)="navigateToSection('contact')">Contact</button>

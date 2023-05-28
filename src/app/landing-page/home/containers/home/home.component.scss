@@ -1,0 +1,45 @@
+.home-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 56.25vw;
+  width: 100%;
+  margin: 0;
+  margin-top: 6vw;
+
+  h1 {
+    font-family: 'Walter-Light', sans-serif;
+    font-size: 5vw;
+    transform: scale(1.03, 0.99);
+    letter-spacing: 0.1vw;
+    span {
+      color: #fdda44;
+    }
+  }
+  .text {
+    font-size: 1.2vw;
+    width: 55%;
+    margin: 3.5vw 0;
+    height: 7vw;
+    line-height: 2.2vw;
+    z-index: 2;
+  }
+
+  button {
+    border: 0;
+    background: #89a5c6;
+    color: #15283f;
+    cursor: pointer;
+    font-family: inherit;
+    border-radius: 1.5vw;
+    font-size: 1.2vw;
+    padding: 0.5vw 1.5vw;
+    z-index: 2;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<div
+  class="about-card-wrap"
+  [ngClass]="{ show: data.show }"
+  [ngStyle]="{ zIndex: 5 - data.id }"
+>
+  <div class="img-cover-container">
+    <img class="cover" [src]="data.url" alt="" />
+  </div>
+  <div class="img-container" (click)="onShow(data.id)">
+    <img [src]="data.url" alt="" />
+  </div>
+  <div class="info">
+    {{ data.text }}
+  </div>
+</div>
