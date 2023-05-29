@@ -4,10 +4,22 @@
   </div>
   <div class="video-and-other">
     <div class="video-wrapper">
-      <video id="background-video" playsinline autoplay loop muted>
+      <video
+        id="background-video"
+        [autoplay]="true"
+        [loop]="true"
+        [muted]="true"
+        disableRemotePlayback
+      >
         <source src="../../../../assets/landing-bg.mp4" type="video/mp4" />
       </video>
-      <video id="background-sphere" playsinline autoplay loop muted>
+      <video
+        id="background-sphere"
+        [autoplay]="true"
+        [loop]="true"
+        [muted]="true"
+        disableRemotePlayback
+      >
         <source src="../../../../assets/sphere.mp4" type="video/mp4" />
       </video>
     </div>
