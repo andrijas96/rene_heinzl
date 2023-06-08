@@ -1,10 +1,24 @@
-<div class="nav-wrap">
-  <h2>Rene <span>Heinzl</span></h2>
-  <div class="link-container">
-    <a *ngFor="let link of links" (click)="navigateToSection(link)">{{
-      link[0].toUpperCase() + link.slice(1, link.length)
-    }}</a>
+<div
+  class="nav-wrap h-28 w-full flex justify-between items-center fixed top-0 z-20 bg-[#00040A]"
+>
+  <h2 class="font-walter-light text-white text-3xl font-bold ml-12">
+    Rene <span class="text-accent/100">Heinzl</span>
+  </h2>
+  <div
+    class="link-container w-1/2 h-full flex justify-around items-center text-2xl mx-12"
+  >
+    <a
+      *ngFor="let link of links"
+      (click)="navigateToSection(link)"
+      class="cursor-pointer"
+      >{{ link[0].toUpperCase() + link.slice(1, link.length) }}</a
+    >
 
-    <button (click)="navigateToSection('contact')">Contact</button>
+    <button
+      (click)="navigateToSection('contact')"
+      class="rounded-3xl border-transparent bg-primary/50 text-primary/300 font-semibold w-52 h-14 shadow-[0px_0px_1rem_rgba(255,246,209,0.25)]"
+    >
+      Contact
+    </button>
   </div>
 </div>
