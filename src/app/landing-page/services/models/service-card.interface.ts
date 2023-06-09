@@ -4,4 +4,5 @@ export interface ServiceCard {
   subtitle: string;
   info: string[];
   url: string;
+  show: boolean;
 }

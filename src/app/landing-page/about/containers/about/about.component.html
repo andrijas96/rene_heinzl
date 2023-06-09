@@ -1,6 +1,11 @@
-<div class="about-wrap" id="about">
-  <h1>Get to know <span>Rene Heinzl</span></h1>
-  <div class="cards">
+<div
+  class="about-wrap flex flex-col items-center justify-center text-center min-h-[56.25vw] w-screen m-0"
+  id="about"
+>
+  <h1 class="font-walter-light font-semibold text-[3.4vw] mb-[4.5vw]">
+    Get to know <span class="text-accent/100">Rene Heinzl</span>
+  </h1>
+  <div class="cards flex relative">
     <about-card
       *ngFor="let card of data; let id = index"
       [data]="card"

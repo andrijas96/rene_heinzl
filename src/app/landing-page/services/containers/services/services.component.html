@@ -1,52 +1,88 @@
-<div class="services-wrap" id="services">
-  <div class="container">
-    <div class="left">
-      <h2>Services</h2>
-      <div class="card">
-        <div class="card-title">
+<div
+  class="services-wrap flex justify-center items-start min-h-[56.25vw] w-full m-0"
+  id="services"
+>
+  <div class="container relative w-screen">
+    <div class="left top-[18vw] absolute z-10">
+      <h2 class="text-left font-walter text-[3vw] mb-[2.5vw]">Services</h2>
+      <div
+        class="card bg-[rgba(21,40,63,0.8)] flex flex-col justify-start w-[32vw] h-[30vw] px-[3vw] py-[2vw] border border-primary/50 rounded-[1.5em] shadow-[0px_0px_128px_rgba(0,120,255,0.25)] backdrop-blur-[10px] absolute z-1"
+      >
+        <div class="card-title text-[2.5vw]">
           {{ currentService.title }}
-          <div class="card-title-info">
-            <div class="eclipse"></div>
+          <div
+            class="card-title-info uppercase text-[1.2vw] flex items-center mb-[1.6vw]"
+          >
+            <div
+              class="eclipse eclipse w-[0.7vw] h-[0.7vw] rounded-full bg-[#fdda44] mr-[0.9vw]"
+            ></div>
             {{ currentService.subtitle }}
           </div>
         </div>
-        <p class="info" *ngIf="nextInfo">
+        <p class="info h-[15vw] text-[1.2vw] leading-[2.2vw]" *ngIf="nextInfo">
           {{ currentService.info[0] }}
         </p>
-        <p class="info" *ngIf="!nextInfo">
+        <p class="info h-[15vw] text-[1.2vw] leading-[2.2vw]" *ngIf="!nextInfo">
           {{ currentService.info[1] }}
         </p>
-        <div class="next" *ngIf="nextInfo" (click)="nextInfo = false">Next</div>
-        <div class="next" *ngIf="!nextInfo" (click)="nextInfo = true">Back</div>
+        <div
+          class="next absolute bottom-[1.8vw] right-[1.8vw] text-[1.2vw] text-uppercase cursor-pointer"
+          *ngIf="nextInfo"
+          (click)="nextInfo = false"
+        >
+          Next
+        </div>
+        <div
+          class="next absolute bottom-[1.8vw] right-[1.8vw] text-[1.2vw] text-uppercase cursor-pointer"
+          *ngIf="!nextInfo"
+          (click)="nextInfo = true"
+        >
+          Back
+        </div>
       </div>
     </div>
-    <div class="right">
+    <div class="right translate-x-[-15vw]">
       <div
-        class="image-container one"
+        class="image-container one border-[0.1vw] border-primary/75 rounded-[1.5em] shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] cursor-pointer absolute overflow-hidden w-[26vw] h-[23vw] left-[43vw] top-[14vw] z-[0]"
         (click)="setCurrent(1)"
-        [ngClass]="{ showOne: showOne }"
+        [ngClass]="
+          services[0].show
+            ? 'scale-[1.7] translate-y-[50%] translate-x-[38%] z-[2] animate-myMoveInOne'
+            : 'animate-myMoveOutOne'
+        "
       >
         <img
+          class="max-w-max h-full object-cover absolute left-[-4.5vw]"
           src="../../../../assets/Kopie von 230201-ReneHeinzl-Manevera-Shooting-030.jpg"
           alt=""
         />
       </div>
       <div
-        class="image-container two"
+        class="image-container two border-[0.1vw] border-primary/75 rounded-[1.5em] shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] cursor-pointer absolute overflow-hidden w-[23vw] h-[28vw] left-[59vw] top-[29vw] z-[1]"
         (click)="setCurrent(2)"
-        [ngClass]="{ showTwo: showTwo }"
+        [ngClass]="
+          services[1].show
+            ? 'translate-y-[-13%] translate-x-[-36%] scale-[1.7] z-[2] animate-myMoveInTwo'
+            : 'animate-myMoveOutTwo'
+        "
       >
         <img
+          class="max-w-max h-full absolute left-[-9vw]"
           src="../../../../assets/Kopie von 230201-ReneHeinzl-Manevera-Shooting-024.jpg"
           alt=""
         />
       </div>
       <div
-        class="image-container three"
+        class="image-container three border-[0.1vw] border-primary/75 rounded-[1.5em] shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] cursor-pointer absolute overflow-hidden w-[20vw] h-[18vw] left-[74vw] top-[8vw]"
         (click)="setCurrent(3)"
-        [ngClass]="{ showThree: showThree }"
+        [ngClass]="
+          services[2].show
+            ? 'translate-y-[104%] translate-x-[-104%] scale-[2.4] z-[2] animate-myMoveInThree'
+            : 'animate-myMoveOutThree'
+        "
       >
         <img
+          class="max-w-max h-full absolute left-[-2vw]"
           src="../../../../assets/Kopie von 230201-ReneHeinzl-Manevera-Shooting-052.jpg"
           alt=""
         />
