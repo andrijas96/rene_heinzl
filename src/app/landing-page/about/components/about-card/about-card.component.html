@@ -1,15 +1,33 @@
 <div
-  class="about-card-wrap"
-  [ngClass]="{ show: data.show }"
+  class="about-card-wrap flex items-center justify-center max-h-[44vw] border-[0.16vw] border-primary/75 rounded-[14vw] overflow-hidden relative mr-[-2vw] shadow-[0_0.2vw_2.8vw_rgba(0,120,255,0.73)]"
+  [ngClass]="{
+    'absolute left-1/2 translate-x-[-50%]': data.show
+  }"
   [ngStyle]="{ zIndex: 5 - data.id }"
 >
-  <div class="img-cover-container">
-    <img class="cover" [src]="data.url" alt="" />
+  <div
+    class="img-cover-container absolute object-cover h-[102%] w-[102%] z-0 rounded-[13vw] overflow-hidden"
+  >
+    <img
+      class="w-full h-full object-cover blur brightness-[0.3]"
+      [src]="data.url"
+      alt=""
+    />
   </div>
-  <div class="img-container" (click)="onShow(data.id)">
-    <img [src]="data.url" alt="" />
+  <div
+    class="img-container w-[26vw] h-[44vw] cursor-pointer rounded-[13vw] overflow-hidden z-10"
+    [ngClass]="{ 'border-[0.16vw]  border-[#edc233]': data.show }"
+    (click)="onShow(data.id)"
+  >
+    <img class="object-cover h-full w-full" [src]="data.url" alt="" />
   </div>
-  <div class="info">
+  <div
+    class="info w-0 opacity-0 p-0 h-[21vw] text-[1.5vw] text-left"
+    [ngClass]="{
+      'w-[33vw] p-[2vw] z-30 opacity-100 flex justify-center items-center':
+        data.show
+    }"
+  >
     {{ data.text }}
   </div>
 </div>

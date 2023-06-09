@@ -1,13 +1,23 @@
-<div class="home-wrap" id="home">
-  <h1>
-    Ever <span>emerging technologies</span> bring modern realities to online
-    businesses.
+<div
+  class="home-wrap flex flex-col items-center justify-center text-center min-h-[56.25vw] w-full mt-[6vw]"
+  id="home"
+>
+  <h1
+    class="font-walter-light h-[23vw] text-[5vw] font-bold scale-[1.03,0.99] tracking-[0.1vw] z-10 leading-[6vw]"
+  >
+    Ever <span class="text-accent/100">emerging technologies</span> bring modern
+    realities to online businesses.
   </h1>
-  <p class="text">
+  <p class="text text-[1.2vw] w-[55%] my-[3.5vw] h-[7vw] leading-[2.2vw] z-10">
     AI specialist on a mission to build AI applications that address real-world
     problems and enhance people's lives, while making this technology as
     understandable and available to as many people as possible.
   </p>
 
-  <button class="learn" (click)="navigateToSection('about')">Learn More</button>
+  <button
+    class="learn bg-primary/75 text-primary/300 border-0 cursor-pointer rounded-[1.5vw] text-[1.2vw] py-[0.5vw] px-[1.5vw] shadow-[0_0px_0.8vw_rgba(255,246,209,0.25)] opacity-80 font-semibold"
+    (click)="navigateToSection('about')"
+  >
+    Learn More
+  </button>
 </div>
