@@ -1,8 +1,8 @@
 <div
-  class="about-card-wrap flex items-center justify-center max-h-[44vw] border-[0.16vw] border-primary/75 rounded-[14vw] overflow-hidden relative mr-[-2vw] shadow-[0_0.2vw_2.8vw_rgba(0,120,255,0.73)]"
-  [ngClass]="{
-    'show absolute left-1/2 translate-x-[-50%]': data.show
-  }"
+  class="about-card-wrap flex items-center justify-center max-h-[44vw] border-[0.16vw] border-primary/75 rounded-[14vw] overflow-hidden mr-[-2vw] shadow-[0_0.2vw_2.8vw_rgba(0,120,255,0.73)]"
+  [ngClass]="
+    data.show ? 'show absolute left-1/2 translate-x-[-50%]' : 'relative'
+  "
   [ngStyle]="{ zIndex: 5 - data.id }"
 >
   <div
@@ -16,7 +16,11 @@
   </div>
   <div
     class="img-container w-[26vw] h-[44vw] cursor-pointer rounded-[13vw] overflow-hidden z-10"
-    [ngClass]="{ 'border-[0.16vw]  border-[#edc233]': data.show }"
+    [ngClass]="
+      data.show
+        ? 'border-[0.16vw]  border-[#edc233] '
+        : 'hover:brightness-90 hover:shadow-[0_0.2vw_3.8vw_rgba(0,120,255,1.5)]'
+    "
     (click)="onShow(data.id)"
   >
     <img class="object-cover h-full w-full" [src]="data.url" alt="" />

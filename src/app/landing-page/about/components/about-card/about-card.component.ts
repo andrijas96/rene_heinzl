@@ -4,7 +4,6 @@ import { AboutCard } from '../../models/about-card.interface';
 @Component({
   selector: 'about-card',
   templateUrl: './about-card.component.html',
-  styleUrls: ['./about-card.component.scss'],
 })
 export class AboutCardComponent implements OnInit {
   @Input()

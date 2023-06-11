@@ -1,26 +1,40 @@
-<div class="blog-wrap" id="blog">
-  <div class="container">
-    <div class="left">
-      <h2>Read the blog</h2>
-      <div class="blog-image">
-        <img src="../../../../assets/blog1.jpg" alt="" />
-        <div class="text-learning">
+<div
+  class="blog-wrap flex flex-col items-center justify-center text-left min-h-[56.25vw] w-full m-0 text-[1.2vw]"
+  id="blog"
+>
+  <div class="container flex justify-between items-start">
+    <div class="left w-[47vw] mr-[8vw] relative">
+      <h2 class="font-walter text-[3vw] absolute top-[-6w]">Read the blog</h2>
+      <div
+        class="blog-image w-[47vw] h-[25vw] border-[0.1vw] border-primary/75 shadow-[0_0_6.5vw_rgb(0,0,0)] rounded-2xl overflow-hidden relative"
+      >
+        <img
+          class="max-w-full h-auto"
+          src="../../../../assets/blog1.jpg"
+          alt=""
+        />
+        <div
+          class="text-learning text-primary/500 text-[1.8vw] font-semibold absolute left-[1.6vw] bottom-[1vw]"
+        >
           Learning with <br />
           queried hints
         </div>
       </div>
-      <div class="text">
+      <div class="text mt-[0.6vw] absolute z-10">
         In many computing applications the system needs to make decisions to
         serve requests that arrive in an online fashion. Consider, for instance,
-        the example of a navigation app that responds to driver requests ...
-        <span>Continue Reading</span>
+        the example of a navigation app that responds to driver requests...
+        <span class="cursor-pointer text-accent/100">Continue Reading</span>
       </div>
     </div>
-    <div class="right">
-      <div class="article" *ngFor="let article of articles">
+    <div class="right w-[27vw]">
+      <div
+        class="article bg-[rgba(34,51,72,0.5)] text-primary/75 m-[0.7vw] py-[1.3vw] px-[1.6vw] rounded-[0.8vw] text-left w-full transition-all duration-300 ease-out hover:bg-primary/75 hover:text-primary/500 137 165 198"
+        *ngFor="let article of articles"
+      >
         {{ article }}
       </div>
-      <div class="explore">Explore all Articles</div>
+      <div class="explore text-primary/200 text-end">Explore all Articles</div>
     </div>
   </div>
 </div>

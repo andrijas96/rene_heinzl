@@ -5,13 +5,20 @@ module.exports = {
     fontFamily: {
       'walter-light': ['Walter-Light', 'sans-serif'],
       walter: ['Walter', 'sans-serif'],
+      SpaceGrotesk: ['Space Grotesk', 'sans-serif'],
     },
     extend: {
+      backgroundImage: {
+        noise: 'url(/assets/NOISE.png)',
+      },
       colors: {
         'accent/100': '#fdda44',
         'primary/50': '#E1ECF9',
         'primary/75': '#89A5C6',
+        'primary/200': '#223348',
         'primary/300': '#15283F',
+        'primary/400': '#06182F',
+        'primary/500': '#000916',
       },
       animation: {
         myMoveInOne: 'myMoveInOne 0.8s ease-in',
@@ -20,6 +27,8 @@ module.exports = {
         myMoveOutTwo: 'myMoveOutTwo 0.5s ease-in',
         myMoveInThree: 'myMoveInThree 0.8s ease-in',
         myMoveOutThree: 'myMoveOutThree 0.5s ease-in',
+        contact: 'contact 10s linear infinite',
+        contact2: 'contact 10s linear 5s infinite',
       },
       keyframes: {
         myMoveInOne: {
@@ -45,12 +54,20 @@ module.exports = {
         myMoveInThree: {
           '0%': { transform: 'scale(1)' },
           '50%': { transform: 'translate(0, 0)' },
-          '100%': { transform: 'scale(2.4) translate(-102%, 91%)' },
+          '100%': { transform: 'scale(2.4) translate(-42%, 43%)' },
         },
         myMoveOutThree: {
-          '0%': { transform: 'scale(2.4) translate(-102%, 91%)' },
+          '0%': { transform: 'scale(2.4) translate(-42%, 43%)' },
           '50%': { transform: 'translate(0, 0)' },
           '100%': { transform: 'scale(1)' },
+        },
+        contact: {
+          '0%': {
+            left: '100%',
+          },
+          '100%': {
+            left: '-100%',
+          },
         },
       },
     },

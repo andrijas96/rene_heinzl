@@ -1,19 +1,39 @@
-<div class="track-record-wrap">
-  <div class="cards">
-    <h2>Professional Track Record</h2>
+<div
+  class="track-record-wrap flex flex-col items-center justify-center text-left min-h-[56.25vw] w-full"
+>
+  <div
+    class="cards flex flex-row items-center justify-center w-[90vw] relative"
+  >
+    <h2
+      class="font-walter text-[3vw] absolute top-[-6vw] left-0 translate-x-[5%]"
+    >
+      Professional Track Record
+    </h2>
     <track-card *ngFor="let card of data; let id = index">
-      <img class="card-img" [src]="card.url" alt="" />
-      <p>
+      <img
+        class="card-img absolute max-w-full h-full object-cover z-[-1] opacity-0 transition duration-300 ease-in-out"
+        [src]="card.url"
+        alt=""
+      />
+      <p class="text-[1.8vw] flex justify-between">
         {{ card.text }}
         <img
+          class="h-[1.4vw] w-[1.4vw] items-center"
           *ngIf="id + 1 == data.length"
           src="../../../../assets/Vector 3.png"
           alt=""
         />
       </p>
-      <div class="learn-more" *ngIf="id + 1 !== data.length">
+      <div
+        class="learn-more w-full text-left text-[1.4vw] flex items-center justify-between opacity-0"
+        *ngIf="id + 1 !== data.length"
+      >
         Learn More
-        <img src="../../../../assets/Vector 3.png" alt="" />
+        <img
+          class="h-[0.9vw] w-[0.9vw]"
+          src="../../../../assets/Vector 3.png"
+          alt=""
+        />
       </div>
     </track-card>
   </div>

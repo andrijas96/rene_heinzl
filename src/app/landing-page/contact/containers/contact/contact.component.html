@@ -1,54 +1,92 @@
-<div class="contact-wrap" id="contact">
-  <div class="card-container">
-    <div class="contact-card">
-      <div class="image-container">
-        <img src="../../../../assets/Rectangle 22.png" alt="" />
+<div
+  class="contact-wrap flex flex-col items-center justify-center text-center min-h-[56.25vw] w-full text-[1.2vw] relative"
+  id="contact"
+>
+  <div class="card-container flex justify-center items-center w-full h-[35vw]">
+    <div
+      class="contact-card flex justify-between items-center w-[40vw] h-[21.2vw] py-[2vw] px-[1.8vw] bg-[rgba(34,51,72,0.8)] backdrop-blur [10px] rounded-[1.5em] z-[1]"
+    >
+      <div
+        class="image-container min-w-[11vw] h-[18vw] rounded-[0.8vw] mr-[2.2vw] overflow-hidden"
+      >
+        <img
+          class="h-auto min-w-full object-contain"
+          src="../../../../assets/Rectangle 22.png"
+          alt=""
+        />
       </div>
-      <div class="contact-info">
+      <div
+        class="contact-info flex flex-col justify-between items-start h-full w-[21vw]text-left"
+      >
         <div class="name">
-          <img class="name-img" src="../../../../assets/Frame 1.png" alt="" />
+          <img
+            class="name-img w-[20vw]"
+            src="../../../../assets/Frame 1.png"
+            alt=""
+          />
         </div>
-        <div class="description">
+        <div class="description h-[8vw] text-left text-[1vw]">
           AI specialist on a mission to build AI applications that address
           real-world problems and enhance people's lives, while making this
           technology as understandable and available to as many people as
           possible.
         </div>
-        <div class="socials">
-          <div class="social" *ngFor="let contact of contacts">
+        <div
+          class="socials flex flex-col justify-between flex-wrap h-[3.2vw] w-full text-[0.5vw]"
+        >
+          <div
+            class="social flex items-center mb-[0.3vw]"
+            *ngFor="let contact of contacts"
+          >
             <img
               [src]="'../../../../assets/' + contact.icon + '.png'"
               alt=""
-              class="icon"
+              class="icon w-[0.75vw] h-[0.75vw] mr-[0.3vw]"
             />
             <span class="username">{{ contact.username }}</span>
           </div>
         </div>
       </div>
       <img
-        class="download"
+        class="download self-start w-[1.6vw] h-[1.6vw] translate-y-[-35%]"
         src="../../../../assets/Vector download.png"
         alt=""
       />
     </div>
-    <div class="contact-me">
-      <div class="email">email</div>
+    <div
+      class="contact-me font-walter absolute flex items-center justify-around text-accent/100 text-[8vw] z-0 animate-contact min-w-full"
+    >
+      <div
+        class="email font-SpaceGrotesk text-[1.2vw] text-primary/400 w-[7vw] h-[3vw] bg-[rgba(225,236,249,0.8)] backdrop-blur-sm mx-[2vw] flex items-center justify-center uppercase rounded-[50%] font-bold"
+      >
+        email
+      </div>
       Contact Me
     </div>
-    <div class="contact-me two">
-      <div class="email">email</div>
+    <div
+      class="contact-me two font-walter absolute flex items-center justify-around text-accent/100 text-[8vw] z-0 animate-contact2 min-w-full left-full"
+    >
+      <div
+        class="email font-SpaceGrotesk text-[1.2vw] text-primary/400 w-[7vw] h-[3vw] bg-[rgba(225,236,249,0.8)] backdrop-blur-sm mx-[2vw] flex items-center justify-center uppercase rounded-[50%] font-bold"
+      >
+        email
+      </div>
       Contact Me
     </div>
   </div>
 
-  <div class="footer">
-    <div class="line"></div>
-    <div class="left-footer">
-      <img src="../../../../assets/Frame 1.png" alt="" />
-      <div class="info">AI Specialist and Consultant</div>
+  <div
+    class="footer relative left-0 bottom-0 w-screen h-[21vw] bg-[#00040A] text-left"
+  >
+    <div
+      class="line border-t-[0.05vw] border-t-[rgba(137,165,198,0.8)] shadow-[0_0_2vw_0.2vw_rgba(137,165,198,0.8)]"
+    ></div>
+    <div class="left-footer absolute top-[7.1vw] left-[10vw]">
+      <img class="[w-[26.5vw]" src="../../../../assets/Frame 1.png" alt="" />
+      <div class="info text-[1.9vw] mt-[1vw]">AI Specialist and Consultant</div>
     </div>
-    <div class="right-footer">
-      <div class="links">
+    <div class="right-footer absolute top-[8.2vw] right-[15vw]">
+      <div class="links text-[1vw]">
         <div>Home</div>
         <div>About</div>
         <div>Services</div>

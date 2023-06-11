@@ -2,7 +2,7 @@
   class="services-wrap flex justify-center items-start min-h-[56.25vw] w-full m-0"
   id="services"
 >
-  <div class="container relative w-screen">
+  <div class="container relative w-screen top-1/2 left-[6.3vw]">
     <div class="left top-[18vw] absolute z-10">
       <h2 class="text-left font-walter text-[3vw] mb-[2.5vw]">Services</h2>
       <div
@@ -43,12 +43,12 @@
     </div>
     <div class="right translate-x-[-15vw]">
       <div
-        class="image-container one border-[0.1vw] border-primary/75 rounded-[1.5em] shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] cursor-pointer absolute overflow-hidden w-[26vw] h-[23vw] left-[43vw] top-[14vw] z-[0]"
+        class="image-container one border-[0.1vw] border-primary/75 rounded-[1.5em] shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] cursor-pointer absolute overflow-hidden w-[26vw] h-[23vw] left-[43vw] top-[14vw] z-[0] hover:shadow-[0px_0px_6.5vw_rgba(0,120,255,0.75)]"
         (click)="setCurrent(1)"
         [ngClass]="
           services[0].show
-            ? 'scale-[1.7] translate-y-[50%] translate-x-[38%] z-[2] animate-myMoveInOne'
-            : 'animate-myMoveOutOne'
+            ? 'showOne scale-[1.7] translate-y-[50%] translate-x-[38%] z-[2] animate-myMoveInOne shadow-[none] hover:shadow-[none] '
+            : 'animate-myMoveOutOne hover:brightness-90'
         "
       >
         <img
@@ -58,12 +58,12 @@
         />
       </div>
       <div
-        class="image-container two border-[0.1vw] border-primary/75 rounded-[1.5em] shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] cursor-pointer absolute overflow-hidden w-[23vw] h-[28vw] left-[59vw] top-[29vw] z-[1]"
+        class="image-container two border-[0.1vw] border-primary/75 rounded-[1.5em] shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] cursor-pointer absolute overflow-hidden w-[23vw] h-[28vw] left-[59vw] top-[29vw] z-[1] hover:shadow-[0px_0px_6.5vw_rgba(0,120,255,0.75)]"
         (click)="setCurrent(2)"
         [ngClass]="
           services[1].show
-            ? 'translate-y-[-13%] translate-x-[-36%] scale-[1.7] z-[2] animate-myMoveInTwo'
-            : 'animate-myMoveOutTwo'
+            ? 'showTwo translate-y-[-13%] translate-x-[-36%] scale-[1.7] z-[2] animate-myMoveInTwo shadow-[none] hover:shadow-[none] '
+            : 'animate-myMoveOutTwo hover:brightness-90'
         "
       >
         <img
@@ -73,12 +73,12 @@
         />
       </div>
       <div
-        class="image-container three border-[0.1vw] border-primary/75 rounded-[1.5em] shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] cursor-pointer absolute overflow-hidden w-[20vw] h-[18vw] left-[74vw] top-[8vw]"
+        class="image-container three border-[0.1vw] border-primary/75 rounded-[1.5em] shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] cursor-pointer absolute overflow-hidden w-[20vw] h-[18vw] left-[74vw] top-[8vw] z[1] hover:shadow-[0px_0px_6.5vw_rgba(0,120,255,0.75)] animate-myMoveInThree"
         (click)="setCurrent(3)"
         [ngClass]="
           services[2].show
-            ? 'translate-y-[104%] translate-x-[-104%] scale-[2.4] z-[2] animate-myMoveInThree'
-            : 'animate-myMoveOutThree'
+            ? 'showThree translate-y-[104%] translate-x-[-104%] scale-[2.4] z-[2] shadow-[none] hover:shadow-[none] '
+            : 'hover:brightness-90 animate-myMoveOutThree'
         "
       >
         <img

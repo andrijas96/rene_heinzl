@@ -103,6 +103,7 @@
             // transform: scale(1.7) translate(24%, 16%);
             // z-index: 2;
             // animation: myMoveInOne 0.8s;
+            // filter: brightness(1);
           }
 
           // @keyframes myMoveInOne {
@@ -146,6 +147,7 @@
             // transform: translate(-13%, -36%) scale(1.7);
             // z-index: 2;
             // animation: myMoveInTwo 0.8s;
+            // filter: brightness(1);
           }
 
           // @keyframes myMoveInTwo {
@@ -182,24 +184,26 @@
             // position: absolute;
             // left: -2vw;
           }
+
           &.showThree {
             // transform: translate(-104%, 104%) scale(2.3);
             // border: 0.004vw solid #89a5c6;
             // z-index: 2;
             // animation: myMoveInThree 0.8s;
+            // filter: brightness(1);
           }
-          @keyframes myMoveInThree {
-            0% {
-              // transform: scale(1);
-            }
-            50% {
-              // transform: translate(0, 0);
-            }
-            100% {
-              // transform: translate(-104%, 104%) scale(2.3);
-              // border: 0.04vw solid #89a5c6;
-            }
-          }
+          // @keyframes myMoveInThree {
+          //   0% {
+          //     transform: scale(1);
+          //   }
+          //   50% {
+          //     transform: translate(0, 0);
+          //   }
+          //   100% {
+          //     transform: translate(-104%, 104%) scale(2.4);
+          //     border: 0.04vw solid #89a5c6;
+          //   }
+          // }
           // @keyframes myMoveOutThree {
           //   0% {
           //     transform: translate(-104%, 104%) scale(2.4);
