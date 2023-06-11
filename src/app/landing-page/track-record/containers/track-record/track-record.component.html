@@ -11,7 +11,7 @@
     </h2>
     <track-card *ngFor="let card of data; let id = index">
       <img
-        class="card-img absolute max-w-full h-full object-cover z-[-1] opacity-0 transition duration-300 ease-in-out"
+        class="card-img absolute w-full min-h-full object-cover z-[-1] opacity-0 transition duration-300 ease-in-out"
         [src]="card.url"
         alt=""
       />

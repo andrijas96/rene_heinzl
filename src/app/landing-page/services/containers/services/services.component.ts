@@ -4,7 +4,6 @@ import { ServiceCard } from '../../models/service-card.interface';
 @Component({
   selector: 'services',
   templateUrl: './services.component.html',
-  styleUrls: ['./services.component.scss'],
 })
 export class ServicesComponent implements OnInit {
   services: ServiceCard[] = [
