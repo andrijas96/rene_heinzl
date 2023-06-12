@@ -18,14 +18,14 @@
       <p class="text-[1.8vw] flex justify-between">
         {{ card.text }}
         <img
-          class="h-[1.4vw] w-[1.4vw] items-center"
+          class="h-[1.4vw] w-[1.4vw] items-center cursor-pointer"
           *ngIf="id + 1 == data.length"
           src="../../../../assets/Vector 3.png"
           alt=""
         />
       </p>
       <div
-        class="learn-more w-full text-left text-[1.4vw] flex items-center justify-between opacity-0"
+        class="learn-more w-full text-left text-[1.4vw] flex items-center justify-between opacity-0 cursor-pointer"
         *ngIf="id + 1 !== data.length"
       >
         Learn More

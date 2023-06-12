@@ -10,13 +10,13 @@
     <a
       *ngFor="let link of links"
       (click)="navigateToSection(link)"
-      class="cursor-pointer"
+      class="cursor-pointer hover:text-primary/75"
       >{{ link[0].toUpperCase() + link.slice(1, link.length) }}</a
     >
 
     <button
       (click)="navigateToSection('contact')"
-      class="rounded-3xl border-transparent bg-primary/50 text-primary/300 font-semibold w-[10vw] h-[3vw] shadow-[0px_0px_1rem_rgba(255,246,209,0.25)]"
+      class="rounded-3xl border-transparent bg-primary/50 text-primary/300 font-semibold w-[10vw] h-[3vw] shadow-[0px_0px_1rem_rgba(255,246,209,0.25)] hover:bg-primary/75"
     >
       Contact
     </button>

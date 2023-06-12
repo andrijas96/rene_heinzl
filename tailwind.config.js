@@ -27,8 +27,8 @@ module.exports = {
         myMoveOutTwo: 'myMoveOutTwo 0.5s ease-in',
         myMoveInThree: 'myMoveInThree 0.8s ease-in',
         myMoveOutThree: 'myMoveOutThree 0.5s ease-in',
-        contact: 'contact 10s linear infinite',
-        contact2: 'contact 10s linear 5s infinite',
+        contact: 'contact 15s linear infinite',
+        contact2: 'contact 15s linear 7.5s infinite',
       },
       keyframes: {
         myMoveInOne: {

@@ -26,23 +26,28 @@
           possible.
         </div>
         <div
-          class="socials flex flex-col justify-between flex-wrap h-[3.2vw] w-full text-[0.5vw]"
+          class="socials flex flex-col justify-center flex-wrap h-[4.2vw] w-full text-[0.75vw]"
         >
           <div
-            class="social flex items-center mb-[0.3vw]"
+            class="social flex items-center h-[1.2vw] w-1/2"
             *ngFor="let contact of contacts"
+            [ngClass]="{
+              'cursor-pointer hover:scale-110 transition-all duration-300  ease-in':
+                contact.url !== ''
+            }"
+            (click)="goToLink(contact.url)"
           >
             <img
               [src]="'../../../../assets/' + contact.icon + '.png'"
               alt=""
-              class="icon w-[0.75vw] h-[0.75vw] mr-[0.3vw]"
+              class="icon w-[1vw] h-[1vw] mr-[0.3vw]"
             />
-            <span class="username">{{ contact.username }}</span>
+            <div class="username select-text">{{ contact.username }}</div>
           </div>
         </div>
       </div>
       <img
-        class="download self-start w-[1.6vw] h-[1.6vw] translate-y-[-35%] translate-x-[35%]"
+        class="download self-start w-[1.6vw] h-[1.6vw] translate-y-[-35%] translate-x-[35%] cursor-pointer"
         src="../../../../assets/Vector download.png"
         alt=""
       />
@@ -81,10 +86,13 @@
     </div>
     <div class="right-footer absolute top-[8.2vw] right-[15vw]">
       <div class="links text-[1vw]">
-        <div>Home</div>
-        <div>About</div>
-        <div>Services</div>
-        <div>Blog</div>
+        <div
+          *ngFor="let link of links"
+          (click)="navigateToSection(link)"
+          class="cursor-pointer hover:text-primary/75"
+        >
+          {{ link[0].toUpperCase() + link.slice(1, link.length) }}
+        </div>
       </div>
     </div>
   </div>
