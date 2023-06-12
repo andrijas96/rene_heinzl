@@ -2,14 +2,17 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
+// Components
 import { AppComponent } from './containers/app/app.component';
 import { AppNavComponent } from './components/app-nav/app-nav.component';
-import { LandingPageModule } from './landing-page/landing-page.module';
+
+// Modules
+import { CoreModule } from './landing-page/core/core.module';
 
 @NgModule({
   declarations: [AppComponent, AppNavComponent],
-  imports: [BrowserModule, AppRoutingModule, LandingPageModule],
   providers: [],
   bootstrap: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, CoreModule],
 })
 export class AppModule {}

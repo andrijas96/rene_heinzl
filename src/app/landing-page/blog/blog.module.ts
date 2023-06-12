@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+// Components
 import { BlogComponent } from './containers/blog/blog.component';
 
 @NgModule({
