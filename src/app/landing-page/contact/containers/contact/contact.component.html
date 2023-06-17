@@ -1,12 +1,14 @@
 <div
-  class="contact-wrap flex flex-col items-center justify-center text-center min-h-[56.25vw] w-full text-[1.2vw] relative"
+  class="contact-wrap flex flex-col items-center justify-between md:justify-center text-center min-h-screen md:min-h-[56.25vw] h-screen w-full text-xl relative"
   id="contact"
 >
-  <div class="card-container flex justify-center items-center w-full h-[35vw]">
+  <div
+    class="card-container flex justify-center items-center w-11/12 h-2/3 md:h-[35vw] mt-20 md:mt-0 text-sm md:text-lg"
+  >
     <div
-      class="contact-card flex justify-between items-center w-[41vw] h-[21.2vw] py-[2.2vw] px-[1.8vw] bg-[rgba(34,51,72,0.8)] backdrop-blur [10px] rounded-[1.5em] z-[1]"
+      class="contact-card flex flex-col md:flex-row justify-between items-center w-full md:w-[41vw] h-max py-5 md:py-11 px-3 md:px-8 bg-[rgba(34,51,72,0.8)] backdrop-blur rounded-[1.5em] z-[1]"
     >
-      <div class="image-container min-w-[11vw] h-[18vw] rounded-[0.8vw]">
+      <div class="image-container min-w-[11vw] h-1/2 md:h-[18vw] rounded-2xl">
         <img
           class="h-full w-full object-cover overflow-hidden"
           src="../../../../assets/Rectangle 22.png"
@@ -14,22 +16,26 @@
         />
       </div>
       <div
-        class="contact-info flex flex-col justify-between items-start h-full w-[21vw] text-left"
+        class="contact-info flex flex-col justify-between items-start h-full w-full md:w-[21vw] text-left"
       >
         <div class="name">
-          <img class="name-img" src="../../../../assets/Frame 1.png" alt="" />
+          <img
+            class="name-img mt-3 md:mt-0"
+            src="../../../../assets/Frame 1.png"
+            alt=""
+          />
         </div>
-        <div class="description h-[8vw] text-left text-[1vw]">
+        <div class="description md:h-40 text-left my-3">
           AI specialist on a mission to build AI applications that address
           real-world problems and enhance people's lives, while making this
           technology as understandable and available to as many people as
           possible.
         </div>
         <div
-          class="socials flex flex-col justify-center flex-wrap h-[4.2vw] w-full text-[0.75vw]"
+          class="socials flex flex-col justify-center flex-wrap h-20 w-full text-xs md:text-sm"
         >
           <div
-            class="social flex items-center h-[1.2vw] w-1/2"
+            class="social flex items-center h-6 w-1/2"
             *ngFor="let contact of contacts"
             [ngClass]="{
               'cursor-pointer hover:scale-110 transition-all duration-300  ease-in':
@@ -40,33 +46,33 @@
             <img
               [src]="'../../../../assets/' + contact.icon + '.png'"
               alt=""
-              class="icon w-[1vw] h-[1vw] mr-[0.3vw]"
+              class="icon w-5 h-5 mr-1.5"
             />
             <div class="username select-text">{{ contact.username }}</div>
           </div>
         </div>
       </div>
       <img
-        class="download self-start w-[1.6vw] h-[1.6vw] translate-y-[-35%] translate-x-[35%] cursor-pointer"
+        class="download self-start w-8 h-8 cursor-pointer absolute md:static right-0 top-0 translate-y-[50%] translate-x-[-50%] md:translate-y-[-35%] md:translate-x-[35%]"
         src="../../../../assets/Vector download.png"
         alt=""
       />
     </div>
     <div
-      class="contact-me font-walter absolute flex items-center justify-around text-accent/100 text-[8vw] z-0 animate-contact min-w-full"
+      class="contact-me font-walter absolute flex items-center justify-around text-accent/100 text-2xl md:text-[8vw] z-0 animate-contact min-w-full"
     >
       <div
-        class="email font-SpaceGrotesk text-[1.2vw] text-primary/400 w-[7vw] h-[3vw] bg-[rgba(225,236,249,0.8)] backdrop-blur-sm mx-[2vw] flex items-center justify-center uppercase rounded-[50%] font-bold"
+        class="email font-SpaceGrotesk text-sm md:text-2xl text-primary/400 w-20 md:w-32 h-9 md:h-14 bg-[rgba(225,236,249,0.8)] backdrop-blur-sm mx-5 md:mx-10 flex items-center justify-center uppercase rounded-[50%] font-bold"
       >
         email
       </div>
       Contact Me
     </div>
     <div
-      class="contact-me two font-walter absolute flex items-center justify-around text-accent/100 text-[8vw] z-0 animate-contact2 min-w-full left-full"
+      class="contact-me two font-walter absolute flex items-center justify-around text-accent/100 text-2xl md:text-[8vw] z-0 animate-contact2 min-w-full left-full"
     >
       <div
-        class="email font-SpaceGrotesk text-[1.2vw] text-primary/400 w-[7vw] h-[3vw] bg-[rgba(225,236,249,0.8)] backdrop-blur-sm mx-[2vw] flex items-center justify-center uppercase rounded-[50%] font-bold"
+        class="email font-SpaceGrotesk text-sm md:text-2xl text-primary/400 w-20 md:w-32 h-9 md:h-14 bg-[rgba(225,236,249,0.8)] backdrop-blur-sm mx-5 md:mx-10 flex items-center justify-center uppercase rounded-[50%] font-bold"
       >
         email
       </div>
@@ -75,17 +81,23 @@
   </div>
 
   <div
-    class="footer relative left-0 bottom-0 w-screen h-[21vw] bg-[#00040A] text-left"
+    class="footer relative left-0 bottom-0 w-screen h-32 md:h-[21vw] bg-[#00040A] text-left flex md:flex-none justify-center items-center"
   >
     <div
-      class="line border-t-[0.05vw] border-t-[rgba(137,165,198,0.8)] shadow-[0_0_2vw_0.2vw_rgba(137,165,198,0.8)]"
+      class="line w-full absolute top-0 border-t border-t-[rgba(137,165,198,0.8)] shadow-[0_0_2vw_0.2vw_rgba(137,165,198,0.8)]"
     ></div>
-    <div class="left-footer absolute top-[7.1vw] left-[10vw]">
-      <img class="w-[26.5vw]" src="../../../../assets/Frame 1.png" alt="" />
-      <div class="info text-[1.9vw] mt-[1vw]">AI Specialist and Consultant</div>
+    <div class="left-footer absolute md:top-36 md:left-48">
+      <img
+        class="w-44 md:w-[26.5vw]"
+        src="../../../../assets/Frame 1.png"
+        alt=""
+      />
+      <div class="info text-lg md:text-4xl mt-5">
+        AI Specialist and Consultant
+      </div>
     </div>
-    <div class="right-footer absolute top-[8.2vw] right-[15vw]">
-      <div class="links text-[1vw]">
+    <div class="right-footer absolute top-40 right-72 hidden md:block">
+      <div class="links text-xs md:text-xl">
         <div
           *ngFor="let link of links"
           (click)="navigateToSection(link)"

@@ -7,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
 export class AppNavComponent implements OnInit {
   links: string[] = ['home', 'about', 'services', 'blog'];
 
+  show: boolean = false;
+
+  constructor() {}
+
   navigateToSection(section: string) {
     window.location.hash = '';
     window.location.hash = section;
-  }
 
-  constructor() {}
+    this.show = false;
+  }
 
   ngOnInit(): void {}
 }

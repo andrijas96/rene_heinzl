@@ -6,13 +6,13 @@
   >
     <div
       *ngFor="let line of [0, 1, 2, 3, 4, 5]"
-      class="line border-r-[0.001vw] border-r-[rgba(255,255,255,0.05)] h-full"
+      class="line border-r border-r-[rgba(255,255,255,0.05)] h-full"
     ></div>
   </div>
   <div
-    class="video-and-other absolute inset-0 z-0 w-screen h-[62vw] overflow-hidden"
+    class="video-and-other absolute inset-0 z-0 w-screen h-screen md:h-[62vw] overflow-hidden"
   >
-    <div class="video-wrapper">
+    <div class="video-wrapper flex flex-col">
       <video
         id="background-video"
         playsinline
@@ -20,7 +20,7 @@
         [loop]="true"
         [muted]="true"
         disableRemotePlayback
-        class="w-full h-[63vw] object-cover"
+        class="w-full h-screen md:h-[63vw] object-cover"
       >
         <source src="../../../../assets/landing-bg.mp4" type="video/mp4" />
       </video>
@@ -31,13 +31,17 @@
         [loop]="true"
         [muted]="true"
         disableRemotePlayback
-        class="absolute inset-0 w-full h-[63vw] object-cover opacity-90"
+        class="absolute inset-0 w-full top-10 md:top-0 h-1/2 md:h-[63vw] object-cover opacity-90 z-20"
       >
         <source src="../../../../assets/sphere.mp4" type="video/mp4" />
       </video>
+
+      <div
+        class="opacity-90 -bottom-10 left-0 h-1/2 w-full absolute bg-black md:hidden"
+      ></div>
     </div>
     <div
-      class="other-background bg-primary/500 w-[155vw] h-[34vw] absolute bottom-[-30vw] left-1/2 -translate-x-1/2 z-[2] rounded-[50%] shadow-[0.3vw_6vw_8vw_4.3vw_#999]"
+      class="other-background bg-primary/500 w-[155vw] h-[34vw] absolute bottom-[-30vw] left-1/2 -translate-x-1/2 z-20 rounded-[50%] shadow-[0.3vw_6vw_8vw_4.3vw_#999]"
     ></div>
   </div>
   <home></home>

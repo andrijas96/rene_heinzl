@@ -1,21 +1,23 @@
 <div
-  class="home-wrap flex flex-col items-center justify-center text-center min-h-[56.25vw] w-full mt-[6vw]"
+  class="home-wrap flex flex-col items-center md:justify-center text-center md:min-h-[56.25vw] min-h-screen w-full mt-28 md:mt-28"
   id="home"
 >
   <h1
-    class="font-walter-light h-[23vw] text-[5vw] font-bold scale-[1.03,0.99] tracking-[0.1vw] z-10 leading-[6vw]"
+    class="font-walter-light md:h-[23vw] w-11/12 md:w-full text-xl md:text-8xl font-bold scale-[1.03,0.99] tracking-widest z-10 leading-tight mt-16 md:mt-0"
   >
     Ever <span class="text-accent/100">emerging technologies</span> bring modern
     realities to online businesses.
   </h1>
-  <p class="text text-[1.2vw] w-[55%] my-[3.5vw] h-[7vw] leading-[2.2vw] z-10">
+  <p
+    class="text text-sm md:text-2xl md:w-[55%] w-3/4 md:mb-16 mb-11 md:mt-20 mt-14 md:h-32 md:leading-10 z-10"
+  >
     AI specialist on a mission to build AI applications that address real-world
     problems and enhance people's lives, while making this technology as
     understandable and available to as many people as possible.
   </p>
 
   <button
-    class="learn bg-primary/75 text-primary/300 border-0 cursor-pointer rounded-[1.5vw] text-[1.2vw] py-[0.5vw] px-[1.5vw] shadow-[0_0px_0.8vw_rgba(255,246,209,0.25)] opacity-80 font-semibold hover:bg-primary/50"
+    class="learn bg-primary/75 text-primary/300 border-0 cursor-pointer rounded-3xl md:text-2xl text-xl py-2.5 px-6 shadow-[0_0px_0.8vw_rgba(255,246,209,0.25)] opacity-80 font-semibold hover:bg-primary/50 mt-28 md:mt-0"
     (click)="navigateToSection('about')"
   >
     Learn More

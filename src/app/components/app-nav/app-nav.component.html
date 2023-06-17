@@ -1,11 +1,14 @@
 <div
-  class="nav-wrap h-[6vw] w-screen flex justify-between items-center fixed top-0 z-20 bg-[#00040A]"
+  class="nav-wrap md:h-24 h-16 w-screen flex justify-between items-center fixed top-0 z-20 bg-[#00040A]"
 >
-  <h2 class="font-walter-light text-white text-[1.5vw] font-bold ml-[3vw]">
+  <h2
+    class="font-walter-light text-white md:text-3xl text-base font-bold ml-10 md:ml-14"
+  >
     Rene <span class="text-accent/100">Heinzl</span>
   </h2>
   <div
-    class="link-container font-SpaceGrotesk text-white w-1/2 h-full flex justify-around items-center text-[1.2vw] mx-[3vw] overflow-hidden"
+    class="link-container font-SpaceGrotesk bg-[#00040A] text-white fixed md:static inset-0 w-screen h-screen md:w-1/2 md:h-full text-3xl md:text-2xl md:mx-14 overflow-hidden flex flex-col md:flex-row justify-evenly items-center md:translate-x-0 transition-transform duration-300 ease-in"
+    [ngClass]="show ? 'translate-x-0' : 'translate-x-full'"
   >
     <a
       *ngFor="let link of links"
@@ -16,9 +19,31 @@
 
     <button
       (click)="navigateToSection('contact')"
-      class="rounded-3xl border-transparent bg-primary/50 text-primary/300 font-semibold w-[10vw] h-[3vw] shadow-[0px_0px_1rem_rgba(255,246,209,0.25)] hover:bg-primary/75"
+      class="rounded-3xl border-transparent bg-primary/50 text-primary/300 font-semibold w-48 h-14 shadow-[0px_0px_1rem_rgba(255,246,209,0.25)] hover:bg-primary/75"
     >
       Contact
     </button>
+  </div>
+  <div
+    class="w-8 h-8 absolute top-3 right-3 cursor-pointer md:hidden"
+    (click)="show = !show"
+  >
+    <div
+      *ngIf="!show"
+      class="w-full h-full flex flex-col justify-center items-center"
+    >
+      <span class="bg-white w-5 h-0.5 rounded-full"></span>
+      <span class="bg-white w-5 h-0.5 rounded-full mt-1"></span>
+      <span class="bg-white w-5 h-0.5 rounded-full mt-1"></span>
+    </div>
+
+    <div *ngIf="show" class="w-full h-full relative">
+      <span
+        class="bg-white absolute top-1/2 left-1/2 -translate-x-1/2 w-6 h-0.5 -rotate-45"
+      ></span>
+      <span
+        class="bg-white absolute top-1/2 left-1/2 -translate-x-1/2 w-6 h-0.5 rotate-45"
+      ></span>
+    </div>
   </div>
 </div>

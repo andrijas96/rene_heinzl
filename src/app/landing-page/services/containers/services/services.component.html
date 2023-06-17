@@ -1,41 +1,47 @@
 <div
-  class="services-wrap flex flex-col justify-center items-start min-h-[62.25vw] w-screen m-0 relative"
+  class="services-wrap flex flex-col justify-center items-start min-h-screen md:min-h-[62.25vw] w-screen m-0 relative"
   id="services"
 >
   <div
-    class="container absolute w-screen top-1/2 translate-x-[11%] -translate-y-[37vw]"
+    class="container absolute w-screen translate-x-[11%] md:-translate-y-[37vw] top-0 md:top-1/2 flex flex-col"
   >
-    <div class="left top-[18vw] absolute z-10">
-      <h2 class="text-left font-walter text-[3vw] mb-[2.5vw]">Services</h2>
+    <div class="left top-72 md:top-[18vw] absolute z-10">
+      <h2 class="text-left font-walter md:text-6xl text-xl mb-12">Services</h2>
       <div
-        class="card bg-[rgba(21,40,63,0.8)] flex flex-col justify-start w-[32vw] h-[30vw] px-[3vw] py-[2vw] border border-primary/50 rounded-[1.5em] shadow-[0px_0px_128px_rgba(0,120,255,0.25)] backdrop-blur-[10px] absolute z-1"
+        class="card bg-[rgba(21,40,63,0.8)] flex flex-col justify-start w-11/12 md:w-[32vw] min-h-[30vw] md:px-14 px-6 md:py-10 py-4 border border-primary/50 rounded-3xl shadow-[0px_0px_128px_rgba(0,120,255,0.25)] backdrop-blur z-1 -translate-x-6 md:translate-x-0"
       >
-        <div class="card-title text-[2.5vw]">
+        <div class="card-title md:text-5xl text-lg">
           {{ currentService.title }}
           <div
-            class="card-title-info uppercase text-[1.2vw] flex items-center mb-[1.6vw]"
+            class="card-title-info uppercase md:text-2xl text-base flex items-center mb-8 mt-3"
           >
             <div
-              class="eclipse eclipse w-[0.7vw] h-[0.7vw] rounded-full bg-[#fdda44] mr-[0.9vw]"
+              class="eclipse eclipse w-3.5 h-3.5 rounded-full bg-accent/100 mr-4"
             ></div>
             {{ currentService.subtitle }}
           </div>
         </div>
-        <p class="info h-[15vw] text-[1.2vw] leading-[2.2vw]" *ngIf="nextInfo">
+        <p
+          class="info h-max md:text-2xl text-sm leading-loose"
+          *ngIf="nextInfo"
+        >
           {{ currentService.info[0] }}
         </p>
-        <p class="info h-[15vw] text-[1.2vw] leading-[2.2vw]" *ngIf="!nextInfo">
+        <p
+          class="info h-max md:text-2xl text-sm leading-loose"
+          *ngIf="!nextInfo"
+        >
           {{ currentService.info[1] }}
         </p>
         <div
-          class="next absolute bottom-[1.8vw] right-[1.8vw] text-[1.2vw] text-uppercase cursor-pointer"
+          class="next absolute md:bottom-8 bottom-4 md:right-8 right-4 md:text-2xl text-sm text-uppercase cursor-pointer"
           *ngIf="nextInfo"
           (click)="nextInfo = false"
         >
           Next
         </div>
         <div
-          class="next absolute bottom-[1.8vw] right-[1.8vw] text-[1.2vw] text-uppercase cursor-pointer"
+          class="next absolute md:bottom-8 bottom-4 md:right-8 right-4 md:text-2xl text-sm text-uppercase cursor-pointer"
           *ngIf="!nextInfo"
           (click)="nextInfo = true"
         >
@@ -43,9 +49,9 @@
         </div>
       </div>
     </div>
-    <div class="right translate-x-[-15vw]">
+    <div class="right md:translate-x-[-15vw] -translate-x-1/4">
       <div
-        class="image-container one border-[0.1vw] border-primary/75 rounded-[1.5em] shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] cursor-pointer absolute overflow-hidden w-[26vw] h-[23vw] left-[43vw] top-[14vw] z-[0] hover:shadow-[0px_0px_6.5vw_rgba(0,120,255,0.75)]"
+        class="image-container one border-2 border-primary/75 rounded-3xl shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] cursor-pointer absolute overflow-hidden md:w-[26vw] md:h-[23vw] w-48 h-44 md:left-[43vw] left-20 top-[14vw] z-[0] hover:shadow-[0px_0px_6.5vw_rgba(0,120,255,0.75)]"
         (click)="setCurrent(1)"
         [ngClass]="
           services[0].show
@@ -60,7 +66,7 @@
         />
       </div>
       <div
-        class="image-container two border-[0.1vw] border-primary/75 rounded-[1.5em] shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] cursor-pointer absolute overflow-hidden w-[23vw] h-[28vw] left-[59vw] top-[29vw] z-[1] hover:shadow-[0px_0px_6.5vw_rgba(0,120,255,0.75)]"
+        class="image-container two border-2 border-primary/75 rounded-3xl shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] cursor-pointer absolute overflow-hidden md:w-[23vw] md:h-[28vw] w-44 h-52 left-[59vw] top-[29vw] z-[1] hover:shadow-[0px_0px_6.5vw_rgba(0,120,255,0.75)]"
         (click)="setCurrent(2)"
         [ngClass]="
           services[1].show
@@ -69,13 +75,13 @@
         "
       >
         <img
-          class="max-w-max h-full absolute left-[-9vw]"
+          class="max-w-max h-full absolute md:left-[-9vw] -left-12"
           src="../../../../assets/Kopie von 230201-ReneHeinzl-Manevera-Shooting-024.jpg"
           alt=""
         />
       </div>
       <div
-        class="image-container three border-[0.1vw] border-primary/75 rounded-[1.5em] shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] cursor-pointer absolute overflow-hidden w-[20vw] h-[18vw] left-[74vw] top-[8vw] z[1] hover:shadow-[0px_0px_6.5vw_rgba(0,120,255,0.75)] animate-myMoveInThree"
+        class="image-container three border-2 border-primary/75 rounded-3xl shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] cursor-pointer absolute overflow-hidden md:w-[20vw] md:h-[18vw] w-32 h-28 md:left-[74vw] md:right-0 -right-10 top-[8vw] z[1] hover:shadow-[0px_0px_6.5vw_rgba(0,120,255,0.75)] animate-myMoveInThree"
         (click)="setCurrent(3)"
         [ngClass]="
           services[2].show

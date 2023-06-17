@@ -1,40 +1,42 @@
 <div
-  class="track-record-wrap flex flex-col items-center justify-center text-left min-h-[56.25vw] w-full"
+  class="track-record-wrap flex flex-col items-center justify-between md:justify-center text-left md:min-h-[56.25vw] min-h-screen w-full border border-red-600"
 >
-  <div
-    class="cards flex flex-row items-center justify-center w-[90vw] relative"
-  >
+  <div class="cards md:w-[90vw] w-screen relative h-screen">
     <h2
-      class="font-walter text-[3vw] absolute top-[-6vw] left-0 translate-x-[5%]"
+      class="font-walter text-xl md:text-6xl absolute md:-top-28 top-10 left-0 translate-x-[5%]"
     >
       Professional Track Record
     </h2>
-    <track-card *ngFor="let card of data; let id = index">
-      <img
-        class="card-img absolute w-full min-h-full object-cover z-[-1] opacity-0 transition duration-300 ease-in-out"
-        [src]="card.url"
-        alt=""
-      />
-      <p class="text-[1.8vw] flex justify-between">
-        {{ card.text }}
+    <div
+      class="cards absolute top-1/2 md:top-0 -translate-y-1/2 md:translate-y-0 flex flex-row flex-wrap justify-center"
+    >
+      <track-card *ngFor="let card of data; let id = index">
         <img
-          class="h-[1.4vw] w-[1.4vw] items-center cursor-pointer"
-          *ngIf="id + 1 == data.length"
-          src="../../../../assets/Vector 3.png"
+          class="card-img absolute w-full min-h-full object-cover z-[-1] opacity-0 transition duration-300 ease-in-out"
+          [src]="card.url"
           alt=""
         />
-      </p>
-      <div
-        class="learn-more w-full text-left text-[1.4vw] flex items-center justify-between opacity-0 cursor-pointer"
-        *ngIf="id + 1 !== data.length"
-      >
-        Learn More
-        <img
-          class="h-[0.9vw] w-[0.9vw]"
-          src="../../../../assets/Vector 3.png"
-          alt=""
-        />
-      </div>
-    </track-card>
+        <p class="text-base md:text-4xl flex justify-between items-center">
+          {{ card.text }}
+          <img
+            class="md:h-7 md:w-7 h-3 w-3 items-center cursor-pointer"
+            *ngIf="id + 1 == data.length"
+            src="../../../../assets/Vector 3.png"
+            alt=""
+          />
+        </p>
+        <div
+          class="learn-more w-full text-left text-sm md:text-3xl flex items-center justify-between opacity-0 cursor-pointer"
+          *ngIf="id + 1 !== data.length"
+        >
+          Learn More
+          <img
+            class="md:h-4 md:w-4 h-2 w-2"
+            src="../../../../assets/Vector 3.png"
+            alt=""
+          />
+        </div>
+      </track-card>
+    </div>
   </div>
 </div>

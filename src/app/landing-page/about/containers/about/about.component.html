@@ -1,14 +1,18 @@
 <div
-  class="about-wrap flex flex-col items-center justify-center text-center min-h-[56.25vw] mb-[15vw] w-screen m-0"
+  class="about-wrap flex flex-col items-center md:justify-center text-center h-screen md:h-0 min-h-screen md:min-h-[56.25vw] md:mb-72 w-screen m-0"
   id="about"
 >
-  <h1 class="font-walter-light font-semibold text-[3.4vw] mb-[4.5vw]">
+  <h1
+    class="font-walter-light font-semibold text-xl md:text-6xl mb-10 md:mb-20"
+  >
     Get to know <span class="text-accent/100">Rene Heinzl</span>
   </h1>
-  <div class="cards flex relative">
+  <div
+    class="cards flex relative flex-col md:flex-row justify-between h-full md:h-0"
+  >
     <about-card
       *ngFor="let card of data; let id = index"
-      [data]="card"
+      [card]="card"
       [ngStyle]="{ zIndex: card.show ? 5 : data.length - id }"
       (setShow)="handleShow(id)"
     ></about-card>

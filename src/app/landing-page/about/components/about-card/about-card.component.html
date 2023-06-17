@@ -1,37 +1,40 @@
 <div
-  class="about-card-wrap flex items-center justify-center max-h-[44vw] border-[0.16vw] border-primary/75 rounded-[14vw] overflow-hidden mr-[-2vw] shadow-[0_0.2vw_2.8vw_rgba(0,120,255,0.73)]"
+  class="about-card-wrap flex items-center justify-center h-60 md:h-[44vw] md:border-4 border-2 border-primary/75 rounded-[14vw] overflow-hidden -mr-10 shadow-[0_0.2vw_2.8vw_rgba(0,120,255,0.73)]"
   [ngClass]="
-    data.show ? 'show absolute left-1/2 translate-x-[-50%]' : 'relative'
+    card.show
+      ? 'show test md:absolute md:left-1/2 md:-translate-x-1/2 -translate-x-5'
+      : 'relative'
   "
-  [ngStyle]="{ zIndex: 5 - data.id }"
+  [ngStyle]="{ zIndex: 5 - card.id }"
 >
   <div
-    class="img-cover-container absolute object-cover h-[102%] w-[102%] z-0 rounded-[13vw] overflow-hidden"
+    class="img-cover-container absolute object-cover md:h-[102%] md:w-[102%] z-0 overflow-hidden"
   >
     <img
-      class="w-full h-full object-cover blur brightness-[0.3]"
-      [src]="data.url"
+      class="w-full h-full object-contain blur brightness-[0.3]"
+      [src]="card.url"
       alt=""
     />
   </div>
   <div
-    class="img-container w-[26vw] h-[44vw] cursor-pointer rounded-[13vw] overflow-hidden z-10"
+    class="img-container w-28 h-60 md:w-[26vw] md:h-[44vw] cursor-pointer rounded-full md:rounded-[13vw] overflow-hidden z-10"
     [ngClass]="
-      data.show
-        ? 'border-[0.16vw]  border-[#edc233] '
+      card.show
+        ? 'md:border-4  border-2 border-accent/200'
         : 'hover:brightness-[0.8] hover:shadow-[0_0.2vw_3.8vw_rgba(0,120,255,1.5)]'
     "
-    (click)="onShow(data.id)"
+    (click)="onShow(card.id)"
   >
-    <img class="object-cover h-full w-full" [src]="data.url" alt="" />
+    <img class="object-cover h-full w-full" [src]="card.url" alt="" />
   </div>
   <div
-    class="info w-0 opacity-0 p-0 h-[21vw] text-[1.5vw] text-left"
-    [ngClass]="{
-      'w-[33vw] p-[2vw] z-30 opacity-100 flex justify-center items-center':
-        data.show
-    }"
+    class="info md:h-[21vw] text-xs md:text-3xl text-left"
+    [ngClass]="
+      card.show
+        ? 'md:w-[33vw] w-60 md:p-10 p-2 z-30 opacity-100 flex justify-center items-center'
+        : 'w-0 opacity-0 p-0'
+    "
   >
-    {{ data.text }}
+    {{ card.text }}
   </div>
 </div>

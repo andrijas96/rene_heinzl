@@ -13,6 +13,7 @@ module.exports = {
       },
       colors: {
         'accent/100': '#fdda44',
+        'accent/200': '#EDC233',
         'primary/50': '#E1ECF9',
         'primary/75': '#89A5C6',
         'primary/200': '#223348',

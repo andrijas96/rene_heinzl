@@ -7,7 +7,7 @@ import { AboutCard } from '../../models/about-card.interface';
 })
 export class AboutCardComponent implements OnInit {
   @Input()
-  data!: AboutCard;
+  card!: AboutCard;
 
   @Output()
   setShow: EventEmitter<number> = new EventEmitter<number>();
@@ -17,6 +17,6 @@ export class AboutCardComponent implements OnInit {
   ngOnInit(): void {}
 
   onShow(id: number) {
-    this.data.show ? (this.data.show = false) : this.setShow.emit(id);
+    this.card.show ? (this.card.show = false) : this.setShow.emit(id);
   }
 }

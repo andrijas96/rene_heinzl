@@ -35,7 +35,7 @@ export class AboutComponent implements OnInit {
 
   handleShow(id: number) {
     this.data.forEach((card: AboutCard) => {
-      card.id == id ? (card.show = true) : (card.show = false);
+      card.show = card.id == id;
     });
   }
 }
