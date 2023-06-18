@@ -1,37 +1,37 @@
 <div
-  class="track-record-wrap flex flex-col items-center justify-between md:justify-center text-left md:min-h-[56.25vw] min-h-screen w-full border border-red-600"
+  class="track-record-wrap flex flex-col items-center justify-between md:justify-center w-full min-h-screen md:min-h-[56.25vw] text-left"
 >
-  <div class="cards md:w-[90vw] w-screen relative h-screen">
+  <div class="cards relative flex justify-center w-screen h-screen md:w-[90vw]">
     <h2
-      class="font-walter text-xl md:text-6xl absolute md:-top-28 top-10 left-0 translate-x-[5%]"
+      class="absolute md:-top-28 top-10 left-0 font-walter text-xl md:text-6xl translate-x-[5%]"
     >
       Professional Track Record
     </h2>
     <div
-      class="cards absolute top-1/2 md:top-0 -translate-y-1/2 md:translate-y-0 flex flex-row flex-wrap justify-center"
+      class="cards absolute top-1/2 md:top-0 flex flex-row flex-wrap justify-center -translate-y-1/2 md:translate-y-0"
     >
       <track-card *ngFor="let card of data; let id = index">
         <img
-          class="card-img absolute w-full min-h-full object-cover z-[-1] opacity-0 transition duration-300 ease-in-out"
+          class="card-img absolute z-[-1] w-full min-h-full object-cover transition duration-300 ease-in-out opacity-0"
           [src]="card.url"
           alt=""
         />
-        <p class="text-base md:text-4xl flex justify-between items-center">
+        <p class="flex justify-between items-center text-base md:text-4xl">
           {{ card.text }}
           <img
-            class="md:h-7 md:w-7 h-3 w-3 items-center cursor-pointer"
+            class="items-center h-3 w-3 md:h-7 md:w-7 cursor-pointer"
             *ngIf="id + 1 == data.length"
             src="../../../../assets/Vector 3.png"
             alt=""
           />
         </p>
         <div
-          class="learn-more w-full text-left text-sm md:text-3xl flex items-center justify-between opacity-0 cursor-pointer"
+          class="learn-more flex items-center justify-between w-full text-sm md:text-3xl text-left opacity-0 cursor-pointer hover:text-primary/75"
           *ngIf="id + 1 !== data.length"
         >
           Learn More
           <img
-            class="md:h-4 md:w-4 h-2 w-2"
+            class="w-2 h-2 md:w-4 md:h-4"
             src="../../../../assets/Vector 3.png"
             alt=""
           />
