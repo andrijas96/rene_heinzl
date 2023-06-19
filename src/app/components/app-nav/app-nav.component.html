@@ -1,13 +1,13 @@
 <div
-  class="nav-wrap md:h-24 h-16 w-screen flex justify-between items-center fixed top-0 z-20 bg-[#00040A]"
+  class="nav-wrap fixed z-20 top-0 flex justify-between items-center w-screen h-16 md:h-24 bg-[#00040A]"
 >
   <h2
-    class="font-walter-light text-white md:text-3xl text-base font-bold ml-10 md:ml-14"
+    class="ml-10 md:ml-14 font-walter-light font-bold text-white text-base md:text-3xl"
   >
     Rene <span class="text-accent/100">Heinzl</span>
   </h2>
   <div
-    class="link-container font-SpaceGrotesk bg-[#00040A] text-white fixed md:static inset-0 w-screen h-screen md:w-1/2 md:h-full text-3xl md:text-2xl md:mx-14 overflow-hidden flex flex-col md:flex-row justify-evenly items-center md:translate-x-0 transition-transform duration-300 ease-in"
+    class="link-container fixed md:static inset-0 flex flex-col md:flex-row justify-evenly items-center w-screen h-screen md:w-1/2 md:h-full md:mx-14 bg-[#00040A] font-SpaceGrotesk text-white text-3xl md:text-2xl md:translate-x-0 overflow-hidden transition-transform duration-300 ease-in"
     [ngClass]="show ? 'translate-x-0' : 'translate-x-full'"
   >
     <a
@@ -19,30 +19,30 @@
 
     <button
       (click)="navigateToSection('contact')"
-      class="rounded-3xl border-transparent bg-primary/50 text-primary/300 font-semibold w-48 h-14 shadow-[0px_0px_1rem_rgba(255,246,209,0.25)] hover:bg-primary/75"
+      class="w-48 h-14 border-transparent bg-primary/50 shadow-[0px_0px_1rem_rgba(255,246,209,0.25)] rounded-3xl text-primary/300 font-semibold hover:bg-primary/75"
     >
       Contact
     </button>
   </div>
   <div
-    class="w-8 h-8 absolute top-3 right-3 cursor-pointer md:hidden"
+    class="absolute top-3 right-3 w-8 h-8 cursor-pointer md:hidden"
     (click)="show = !show"
   >
     <div
       *ngIf="!show"
-      class="w-full h-full flex flex-col justify-center items-center"
+      class="flex flex-col justify-center items-center w-full h-full"
     >
-      <span class="bg-white w-5 h-0.5 rounded-full"></span>
-      <span class="bg-white w-5 h-0.5 rounded-full mt-1"></span>
-      <span class="bg-white w-5 h-0.5 rounded-full mt-1"></span>
+      <span class="w-5 h-0.5 bg-white rounded-full"></span>
+      <span class="w-5 h-0.5 mt-1 bg-white rounded-full"></span>
+      <span class="w-5 h-0.5 mt-1 bg-white rounded-full"></span>
     </div>
 
-    <div *ngIf="show" class="w-full h-full relative">
+    <div *ngIf="show" class="relative w-full h-full">
       <span
-        class="bg-white absolute top-1/2 left-1/2 -translate-x-1/2 w-6 h-0.5 -rotate-45"
+        class="absolute top-1/2 left-1/2 w-6 h-0.5 bg-white -translate-x-1/2 -rotate-45"
       ></span>
       <span
-        class="bg-white absolute top-1/2 left-1/2 -translate-x-1/2 w-6 h-0.5 rotate-45"
+        class="absolute top-1/2 left-1/2 w-6 h-0.5 bg-white -translate-x-1/2 rotate-45"
       ></span>
     </div>
   </div>
