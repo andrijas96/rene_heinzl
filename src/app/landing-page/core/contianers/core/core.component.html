@@ -1,12 +1,12 @@
 <div
-  class="core font-SpaceGrotesk text-white min-h-screen min-w-full bg-primary/500 flex flex-col items-center overflow-hidden"
+  class="core flex flex-col items-center min-h-screen min-w-full font-SpaceGrotesk text-white bg-primary/500 overflow-hidden"
 >
   <div
-    class="noise fixed inset-0 bg-noise z-10 flex justify-around pointer-events-none"
+    class="noise z-10 fixed inset-0 flex justify-around bg-noise pointer-events-none"
   >
     <div
       *ngFor="let line of [0, 1, 2, 3, 4, 5]"
-      class="line border-r border-r-[rgba(255,255,255,0.05)] h-full"
+      class="line h-full border-r border-r-[rgba(255,255,255,0.05)]"
     ></div>
   </div>
   <div
@@ -31,17 +31,17 @@
         [loop]="true"
         [muted]="true"
         disableRemotePlayback
-        class="absolute inset-0 w-full top-10 md:top-0 h-1/2 md:h-[63vw] object-cover opacity-90 z-20"
+        class="absolute z-20 inset-0 top-10 md:top-0 w-full h-1/2 md:h-[63vw] object-cover opacity-90"
       >
         <source src="../../../../assets/sphere.mp4" type="video/mp4" />
       </video>
 
       <div
-        class="opacity-90 -bottom-10 left-0 h-1/2 w-full absolute bg-black md:hidden"
+        class="absolute left-0 -bottom-10 h-1/2 w-full bg-black md:hidden opacity-90"
       ></div>
     </div>
     <div
-      class="other-background bg-primary/500 w-[155vw] h-[34vw] absolute bottom-[-30vw] left-1/2 -translate-x-1/2 z-20 rounded-[50%] shadow-[0.3vw_6vw_8vw_4.3vw_#999]"
+      class="other-background absolute z-20 left-1/2 bottom-[-30vw] w-[155vw] h-[34vw] bg-primary/500 rounded-[50%] -translate-x-1/2 shadow-[0.3vw_6vw_8vw_4.3vw_#999]"
     ></div>
   </div>
   <home></home>
