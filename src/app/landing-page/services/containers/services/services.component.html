@@ -1,14 +1,20 @@
 <div
-  class="services-wrap relative flex flex-col justify-center items-start w-screen min-h-screen md:min-h-[62.25vw] m-0"
+  class="services-wrap flex flex-col justify-center items-center w-screen h-screen min-h-screen md:min-h-[62.25vw] m-0"
   id="services"
 >
   <div
-    class="container absolute top-0 md:top-1/2 flex flex-col w-screen translate-x-[11%] md:-translate-y-[37vw]"
+    class="container flex flex-col-reverse md:flex-row justify-between items-center md:items-start w-screen h-full"
   >
-    <div class="info-container absolute z-10 top-72 md:top-[18vw]">
-      <h2 class="mb-12 font-walter md:text-6xl text-xl text-left">Services</h2>
+    <div
+      class="info-container z-10 flex flex-col justify-start items-center h-1/2"
+    >
+      <h2
+        class="w-10/12 md:w-full mb-4 md:mb-12 font-walter md:text-6xl text-xl text-left"
+      >
+        Services
+      </h2>
       <div
-        class="card flex flex-col justify-start w-11/12 md:w-[32vw] min-h-[30vw] md:px-14 px-6 md:py-10 py-4 border border-primary/50 rounded-3xl bg-[rgba(21,40,63,0.8)] shadow-[0px_0px_128px_rgba(0,120,255,0.25)] backdrop-blur z-1 -translate-x-6 md:translate-x-0"
+        class="card flex flex-col justify-start w-11/12 md:w-[32vw] min-h-[30vw] md:px-14 px-6 md:py-10 py-4 border border-primary/50 rounded-3xl bg-[rgba(21,40,63,0.8)] shadow-[0px_0px_128px_rgba(0,120,255,0.25)] backdrop-blur"
       >
         <div class="card-title md:text-5xl text-lg">
           {{ currentService.title }}
@@ -49,9 +55,11 @@
         </div>
       </div>
     </div>
-    <div class="right md:translate-x-[-15vw] -translate-x-1/4">
+    <div
+      class="right relative w-screen h-1/2 md:w-full md:h-full translate-x-0"
+    >
       <div
-        class="image-container one absolute z-[0] left-20 top-[14vw] w-48 h-44 md:w-[26vw] md:h-[23vw] md:left-[43vw] border-2 border-primary/75 rounded-3xl shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] hover:shadow-[0px_0px_6.5vw_rgba(0,120,255,0.75)] overflow-hidden cursor-pointer"
+        class="image-container one absolute z-[0] top-[10%] left-[5%] md:top-[-7%] md:left-[-9%] w-48 h-44 md:w-[26vw] md:h-[23vw] border-2 border-primary/75 rounded-3xl shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] hover:shadow-[0px_0px_6.5vw_rgba(0,120,255,0.75)] overflow-hidden cursor-pointer"
         (click)="setCurrent(1)"
         [ngClass]="
           services[0].show
@@ -66,7 +74,7 @@
         />
       </div>
       <div
-        class="image-container two absolute z-[1] top-[29vw] left-[59vw] w-44 h-52 md:w-[23vw] md:h-[28vw] border-2 border-primary/75 rounded-3xl shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] hover:shadow-[0px_0px_6.5vw_rgba(0,120,255,0.75)] cursor-pointer overflow-hidden"
+        class="image-container two absolute z-[1] top-1/4 left-[40%] md:top-[17%] md:left-[22%] w-44 h-52 md:w-[23vw] md:h-[28vw] border-2 border-primary/75 rounded-3xl shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] hover:shadow-[0px_0px_6.5vw_rgba(0,120,255,0.75)] cursor-pointer overflow-hidden"
         (click)="setCurrent(2)"
         [ngClass]="
           services[1].show
@@ -81,7 +89,7 @@
         />
       </div>
       <div
-        class="image-container three absolute z[1] top-[8vw] -right-10 md:left-[74vw] md:right-0 w-32 h-28 md:w-[20vw] md:h-[18vw] border-2 border-primary/75 rounded-3xl shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] overflow-hidden hover:shadow-[0px_0px_6.5vw_rgba(0,120,255,0.75)] animate-myMoveInThree cursor-pointer"
+        class="image-container three absolute z[1] top-[10%] right-[5%] md:top-[-17%] md:left-[56] md:right-0 w-32 h-28 md:w-[20vw] md:h-[18vw] border-2 border-primary/75 rounded-3xl shadow-[0px_0px_6.5vw_rgba(0,120,255,0.25)] overflow-hidden hover:shadow-[0px_0px_6.5vw_rgba(0,120,255,0.75)] animate-myMoveInThree cursor-pointer"
         (click)="setCurrent(3)"
         [ngClass]="
           services[2].show
