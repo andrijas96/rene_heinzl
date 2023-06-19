@@ -1,14 +1,14 @@
 <div
-  class="about-wrap flex flex-col items-center md:justify-center text-center h-screen md:h-0 min-h-screen md:min-h-[56.25vw] md:mb-72 w-screen m-0"
+  class="about-wrap flex flex-col items-center justify-start w-screen h-screen md:h-0 min-h-screen md:min-h-[56.25vw] md:mb-72 m-0 text-center border border-red-500"
   id="about"
 >
   <h1
-    class="font-walter-light font-semibold text-xl md:text-6xl mb-10 md:mb-20"
+    class="mb-10 md:mb-20 font-walter-light font-semibold text-xl md:text-6xl"
   >
     Get to know <span class="text-accent/100">Rene Heinzl</span>
   </h1>
   <div
-    class="cards flex relative flex-col md:flex-row justify-between h-full md:h-0"
+    class="cards flex relative flex-col md:flex-row justify-between md:justify-center items-center md:items-start w-screen h-full md:h-0"
   >
     <about-card
       *ngFor="let card of data; let id = index"
