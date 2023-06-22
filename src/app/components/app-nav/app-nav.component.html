@@ -2,12 +2,12 @@
   class="nav-wrap fixed z-20 top-0 flex justify-between items-center w-screen h-16 md:h-24 bg-[#00040A]"
 >
   <h2
-    class="ml-10 md:ml-14 font-walter-light font-bold text-white text-base md:text-3xl"
+    class="ml-10 md:ml-14 font-walter-light font-bold text-white text-base xl:text-2xl 2xl:text-3xl"
   >
     Rene <span class="text-accent/100">Heinzl</span>
   </h2>
   <div
-    class="link-container fixed md:static inset-0 flex flex-col md:flex-row justify-evenly items-center w-screen h-screen md:w-1/2 md:h-full md:mx-14 bg-[#00040A] font-SpaceGrotesk text-white text-3xl md:text-2xl md:translate-x-0 overflow-hidden transition-transform duration-300 ease-in"
+    class="link-container fixed lg:static inset-0 flex flex-col lg:flex-row justify-evenly items-center w-screen h-screen lg:w-1/2 lg:h-full 2xl:mx-14 bg-[#00040A] font-SpaceGrotesk text-white text-3xl lg:text-lg xl:text-xl 2xl:text-2xl lg:translate-x-0 overflow-hidden transition-transform duration-300 ease-in"
     [ngClass]="show ? 'translate-x-0' : 'translate-x-full'"
   >
     <a
@@ -19,13 +19,13 @@
 
     <button
       (click)="navigateToSection('contact')"
-      class="w-48 h-14 border-transparent bg-primary/50 shadow-[0px_0px_1rem_rgba(255,246,209,0.25)] rounded-3xl text-primary/300 font-semibold hover:bg-primary/75"
+      class="lg:w-24 lg:h-10 xl:w-36 xl:h-12 2xl:w-48 2xl:h-14 border-transparent lg:bg-primary/50 lg:shadow-[0px_0px_1rem_rgba(255,246,209,0.25)] rounded-3xl lg:text-primary/300 font-semibold lg:hover:bg-primary/75"
     >
       Contact
     </button>
   </div>
   <div
-    class="absolute top-3 right-3 w-8 h-8 cursor-pointer md:hidden"
+    class="absolute top-3 right-3 w-8 h-8 cursor-pointer lg:hidden"
     (click)="show = !show"
   >
     <div

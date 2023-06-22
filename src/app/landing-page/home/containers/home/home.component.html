@@ -1,25 +1,28 @@
 <div
-  class="home-wrap flex flex-col items-center md:justify-center w-full md:min-h-[56.25vw] min-h-screen mt-28 md:mt-28 text-center"
+  class="home-wrap flex flex-col items-center lg:justify-between w-full h-screen xl:min-h-[56.25vw] min-h-screen mt-36 lg:mt-40 xl:mt-52 2xl:mt-52 text-center"
   id="home"
 >
   <h1
-    class="z-10 w-11/12 md:w-full md:h-[23vw] mt-16 md:mt-0 font-walter-light font-bold scale-[1.03,0.99] text-xl md:text-8xl tracking-widest leading-tight"
+    class="z-10 w-11/12 md:h-[23vw] mt-16 md:mt-0 font-walter-light font-bold scale-[1.03,0.99] text-xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-widest leading-tight"
   >
     Ever <span class="text-accent/100">emerging technologies</span> bring modern
     realities to online businesses.
   </h1>
-  <p
-    class="text z-10 w-3/4 md:w-[55%] md:h-32 mb-11 md:mb-16 md:mt-20 mt-14 text-sm md:text-2xl md:leading-10"
-  >
-    AI specialist on a mission to build AI applications that address real-world
-    problems and enhance people's lives, while making this technology as
-    understandable and available to as many people as possible.
-  </p>
 
-  <button
-    class="learn mt-28 md:mt-0 py-2.5 px-6 bg-primary/75 border-0 rounded-3xl font-semibold text-xl md:text-2xl text-primary/300 shadow-[0_0px_0.8vw_rgba(255,246,209,0.25)] hover:bg-primary/50 opacity-80 cursor-pointer"
-    (click)="navigateToSection('about')"
-  >
-    Learn More
-  </button>
+  <div class="text-and-button flex flex-col items-center w-full h-full">
+    <p
+      class="text z-10 w-3/4 md:w-[55%] md:h-32 mb-11 md:mb-16 xl:mt-5 2xl:mt-20 mt-14 text-sm md:text-base lg:text-2xl md:leading-10"
+    >
+      AI specialist on a mission to build AI applications that address
+      real-world problems and enhance people's lives, while making this
+      technology as understandable and available to as many people as possible.
+    </p>
+
+    <button
+      class="learn 2xlmt-28 md:mt-0 py-2.5 px-6 bg-primary/75 border-0 rounded-3xl font-semibold text-xl md:text-2xl text-primary/300 shadow-[0_0px_0.8vw_rgba(255,246,209,0.25)] hover:bg-primary/50 opacity-80 cursor-pointer"
+      (click)="navigateToSection('about')"
+    >
+      Learn More
+    </button>
+  </div>
 </div>
