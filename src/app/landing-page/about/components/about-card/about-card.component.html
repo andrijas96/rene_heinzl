@@ -1,5 +1,5 @@
 <div
-  class="about-card-wrap flex items-center justify-center w-max h-60 md:h-[44vw] md:-mr-10 my-1 border-2 md:border-4 border-primary/75 rounded-[14vw] overflow-hidden shadow-[0_0.2vw_2.8vw_rgba(0,120,255,0.73)]"
+  class="about-card-wrap flex items-center justify-center w-max h-60 md:h-[44vw] md:-mr-10 my-1 border-2 md:border-4 border-primary/75 rounded-[10vw] md:rounded-[14vw] overflow-hidden shadow-[0_0.2vw_2.8vw_rgba(0,120,255,0.73)]"
   [ngClass]="
     card.show
       ? 'show test md:absolute md:left-1/2 md:-translate-x-1/2 -translate-x-0'
@@ -17,7 +17,7 @@
     />
   </div>
   <div
-    class="img-container z-10 w-28 h-60 md:w-[26vw] md:h-[44vw] rounded-full md:rounded-[13vw] overflow-hidden cursor-pointer"
+    class="img-container z-10 w-28 h-60 md:w-[26vw] md:h-[44vw] rounded-[10vw] md:rounded-[13vw] overflow-hidden cursor-pointer"
     [ngClass]="
       card.show
         ? 'border-2 md:border-4 border-accent/200'
@@ -28,7 +28,7 @@
     <img class="w-full h-full object-cover" [src]="card.url" alt="" />
   </div>
   <div
-    class="info w-0 md:h-[21vw] text-xs md:text-3xl text-left"
+    class="info w-0 md:h-[21vw] text-xs md:text-sm lg:text-lg xl:text-2xl text-left"
     [ngClass]="
       card.show
         ? 'w-60 md:w-[33vw]  md:p-10 p-2 z-30 opacity-100 flex justify-center items-center'
