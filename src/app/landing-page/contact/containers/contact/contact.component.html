@@ -1,14 +1,16 @@
 <div
-  class="contact-wrap relative flex flex-col items-center justify-center w-full h-screen min-h-screen md:min-h-[56.25vw] text-center text-xl"
+  class="contact-wrap relative flex flex-col items-center justify-end w-full h-screen min-h-screen md:min-h-[56.25vw] text-center text-xl"
   id="contact"
 >
   <div
-    class="card-container flex justify-center items-center w-11/12 h-2/3 md:h-[35vw] mt-20 md:mt-0 text-sm md:text-lg"
+    class="card-container flex justify-center items-center w-11/12 md:w-full h-2/3 lg:h-3/4 md:h-[35vw] mt-20 md:mt-0 md:mb-20 text-sm md:text-lg"
   >
     <div
-      class="contact-card z-[1] flex flex-col md:flex-row justify-between items-center w-full md:w-[41vw] h-max py-5 md:py-11 px-3 md:px-8 rounded-[1.5em] bg-[rgba(34,51,72,0.8)] backdrop-blur"
+      class="contact-card z-[1] flex flex-col md:flex-row justify-between items-center w-full md:w-11/12 lg:w-[50rem] h-max py-5 md:py-11 px-3 md:px-8 rounded-[1.5em] bg-[rgba(34,51,72,0.8)] backdrop-blur"
     >
-      <div class="image-container min-w-[11vw] h-1/2 md:h-[18vw] rounded-2xl">
+      <div
+        class="image-container min-w-[11vw] h-1/2 lg:h-full md:mr-8 rounded-2xl"
+      >
         <img
           class="w-full h-full object-cover overflow-hidden"
           src="../../../../assets/Rectangle 22.png"
@@ -16,7 +18,7 @@
         />
       </div>
       <div
-        class="contact-info flex flex-col justify-between items-start w-full h-full md:w-[21vw] text-left"
+        class="contact-info flex flex-col justify-between items-start w-full h-full md:w-2/3 md:h-80 text-left"
       >
         <div class="name">
           <img
@@ -25,7 +27,7 @@
             alt=""
           />
         </div>
-        <div class="description md:h-40 my-3 text-left">
+        <div class="description lg:h-40 my-3 text-left">
           AI specialist on a mission to build AI applications that address
           real-world problems and enhance people's lives, while making this
           technology as understandable and available to as many people as
@@ -81,22 +83,22 @@
   </div>
 
   <div
-    class="footer relative left-0 bottom-0 hidden md:block md:flex-none justify-center items-center w-screen h-32 md:h-[21vw] bg-[#00040A] text-left"
+    class="footer relative left-0 bottom-0 hidden md:flex flex-row justify-around items-center w-screen h-1/5 bg-[#00040A] text-left"
   >
     <div
       class="line absolute top-0 w-full border-t border-t-[rgba(137,165,198,0.8)] shadow-[0_0_2vw_0.2vw_rgba(137,165,198,0.8)]"
     ></div>
-    <div class="left-footer absolute md:top-36 md:left-48">
+    <div class="left-footer md:top-36 md:left-48">
       <img
         class="w-44 md:w-[26.5vw]"
         src="../../../../assets/Frame 1.png"
         alt=""
       />
-      <div class="info mt-5 text-lg md:text-4xl">
+      <div class="info mt-5 text-lg md:text-xl lg:text-2xl xl:text-4xl">
         AI Specialist and Consultant
       </div>
     </div>
-    <div class="right-footer absolute top-40 right-72 hidden md:block">
+    <div class="right-footer top-40 right-72 hidden md:block">
       <div class="links text-xs md:text-xl">
         <div
           *ngFor="let link of links"
