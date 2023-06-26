@@ -3,12 +3,12 @@
 >
   <div class="cards relative flex justify-center w-screen h-screen md:w-[90vw]">
     <h2
-      class="absolute md:-top-28 top-10 left-0 font-walter text-xl md:text-6xl translate-x-[5%]"
+      class="absolute md:-top-28 top-10 left-0 font-walter text-xl md:text-3xl lg:text-5xl translate-x-[5%]"
     >
       Professional Track Record
     </h2>
     <div
-      class="cards absolute top-1/2 md:top-0 flex flex-row flex-wrap justify-center -translate-y-1/2 md:translate-y-0"
+      class="cards absolute top-1/2 md:top-0 flex flex-row flex-wrap lg:flex-nowrap justify-center lg:justify-between w-3/4 md:w-full -translate-y-1/2 md:translate-y-0"
     >
       <track-card *ngFor="let card of data; let id = index">
         <img
@@ -16,7 +16,7 @@
           [src]="card.url"
           alt=""
         />
-        <p class="flex justify-between items-center text-base md:text-4xl">
+        <p class="flex justify-between items-center">
           {{ card.text }}
           <img
             class="items-center h-3 w-3 md:h-7 md:w-7 cursor-pointer"
@@ -26,7 +26,7 @@
           />
         </p>
         <div
-          class="learn-more flex items-center justify-between w-full text-sm md:text-3xl text-left opacity-0 cursor-pointer hover:text-primary/75"
+          class="learn-more flex items-center justify-between w-full text-left opacity-0 cursor-pointer hover:text-primary/75"
           *ngIf="id + 1 !== data.length"
         >
           Learn More

@@ -1,8 +1,10 @@
 <div
-  class="card relative z-[0] flex flex-col justify-between w-40 h-52 md:w-96 md:h-[29vw] m-2.5 rounded-xl md:rounded-3xl bg-primary/400 overflow-hidden"
+  class="card relative z-[0] flex flex-col justify-between w-40 h-52 md:w-80 md:h-96 lg:w-60 xl:w-72 xl:h-[28rem] 2xl:w-[22rem] 2xl:h-[36rem] m-2.5 rounded-xl md:rounded-3xl bg-primary/400 text-base md:text-2xl 2xl:text-4xl overflow-hidden"
 >
   <ng-content select="img"></ng-content>
-  <div class="card-info flex flex-col justify-between h-full p-3 md:p-10">
+  <div
+    class="card-info flex flex-col justify-between h-full p-3 md:p-10 lg:p-8 xl:p-10"
+  >
     <ng-content select="p"></ng-content>
     <ng-content select="div.learn-more"></ng-content>
   </div>
