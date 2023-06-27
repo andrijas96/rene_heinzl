@@ -19,21 +19,25 @@
   </div>
 
   <div
-    class="contact-card relative z-[1] flex flex-col lg:flex-row justify-center items-end w-11/12 h-max md:h-96 py-5 md:py-11 px-3 md:px-8 rounded-[1.5em] bg-[rgba(34,51,72,0.8)] backdrop-blur lg:hidden"
+    class="contact-card relative z-[1] flex flex-col lg:flex-row justify-end md:justify-center items-center md:items-end w-3/4 h-5/6 md:w-11/12 md:h-96 py-5 md:py-11 px-3 md:px-8 rounded-[1.5em] bg-[rgba(34,51,72,0.8)] backdrop-blur lg:hidden"
   >
     <div
-      class="img-container absolute left-0 h-[26rem] w-60 md:border-4 border-primary/75 rounded-[8rem] overflow-hidden"
+      class="img-container absolute top-[10%] md:top-0 left-1/2 md:left-0 w-5/6 h-80 md:w-60 md:h-[26rem] md:border-4 border-primary/75 rounded-3xl md:rounded-[8rem] -translate-x-1/2 md:-translate-x-0 overflow-hidden"
     >
-      <img class="w-full h-full object-cover" [src]="currentImage" alt="" />
+      <img
+        class="w-full h-[170%] md:h-full object-cover"
+        [src]="currentImage"
+        alt=""
+      />
       <div
         class="background-cover absolute inset-0 w-full h-full bg-primary/75 opacity-0 transition duration-300"
         [ngClass]="triggerAnimation ? 'opacity-100' : 'opacity-0'"
       ></div>
     </div>
     <div
-      class="info-and-buttons relative flex flex-col justify-between w-2/3 h-full text-xl"
+      class="info-and-buttons md:relative flex flex-col justify-between w-11/12 md:w-2/3 h-1/2 md:h-full text-lg"
     >
-      <div class="info text-left mt-4">
+      <div class="info text-left mt-12 md:mt-4">
         {{ data[currentId].text }}
       </div>
       <div class="buttons flex justify-between">
@@ -52,13 +56,12 @@
       </div>
 
       <div
-        class="dots absolute top-0 left-1/2 flex justify-between items-center w-20 -translate-x-1/2 -translate-y-full"
+        class="dots absolute top-[5%] md:top-0 left-1/2 flex justify-between items-center w-20 -translate-x-1/2 md:-translate-y-full"
       >
         <div
           *ngFor="let dot of data"
-          class="dot w-4 h-4 rounded-full bg-primary/500 transition-all duration-300 cursor-pointer"
+          class="dot w-4 h-4 rounded-full bg-primary/500 transition-all duration-300"
           [ngClass]="{ 'bg-primary/50': dot.id == currentId }"
-          (click)="currentId = dot.id"
         ></div>
       </div>
     </div>
