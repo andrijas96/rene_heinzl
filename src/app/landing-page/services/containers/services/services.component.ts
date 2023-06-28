@@ -15,7 +15,7 @@ export class ServicesComponent implements OnInit {
         'We are specialized in providing highly customized solutions tailored specifically to your needs. This is made possible by thoroughly discussing and reviewing your already established work flow personally in great detail so as to determine all of your requirements and needs.',
         'Our teams design and implement corporate designs by using our software modules into convenient web-based applications which allow for high portability and wide accessibility from all around the world with a great number of different devices.',
       ],
-      url: '',
+      url: '../../../../assets/Kopie von 230201-ReneHeinzl-Manevera-Shooting-030.jpg',
       show: false,
     },
     {
@@ -26,7 +26,7 @@ export class ServicesComponent implements OnInit {
         'Benefit from our development experience, academic research, technological insights on trends and possibilities in application and software design and architecture and our successfully completed projects.',
         'The academic training and experience qualifies Dr. René Heinzl to conduct research for your needs in various fields of scientific computing. From the purely computational aspects to discretization schemes and the solution of linear systems we and our partners have the combined expertise to tackle problems of great intricacies with ease.',
       ],
-      url: '',
+      url: '../../../../assets/Kopie von 230201-ReneHeinzl-Manevera-Shooting-024.jpg',
       show: false,
     },
     {
@@ -37,11 +37,12 @@ export class ServicesComponent implements OnInit {
         'We are specialized in providing highly customized solutions tailored specifically to your needs. This is made possible by thoroughly discussing and reviewing your already established work flow personally in great detail so as to determine all of your requirements and needs.',
         'Since software licenses represent a substantial financial commitment a clear understanding of both the available choices as well as your requirements and needs is of great importance. We offer our services and knowledge of systems and software to advise you in the process of selection of acquisition to ensure the best of results for you.',
       ],
-      url: '',
+      url: '../../../../assets/Kopie von 230201-ReneHeinzl-Manevera-Shooting-052.jpg',
       show: false,
     },
   ];
 
+  currentId: number = 1;
   currentService: ServiceCard = this.services[0];
   nextInfo: boolean = true;
 
