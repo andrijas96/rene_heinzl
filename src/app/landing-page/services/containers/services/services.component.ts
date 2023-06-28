@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceCard } from '../../models/service-card.interface';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'services',
@@ -42,6 +43,8 @@ export class ServicesComponent implements OnInit {
     },
   ];
 
+  faCoffee = faCoffee;
+
   currentId: number = 1;
   currentService: ServiceCard = this.services[0];
   nextInfo: boolean = true;
@@ -66,6 +69,16 @@ export class ServicesComponent implements OnInit {
       this.services.forEach((service: ServiceCard) =>
         id == service.id ? (service.show = true) : (service.show = false)
       );
+    }
+  }
+
+  change(direction: string) {
+    if (direction === 'left') {
+      this.currentId =
+        this.currentId == 0 ? this.services.length - 1 : this.currentId - 1;
+    } else if (direction === 'right') {
+      this.currentId =
+        this.currentId == this.services.length - 1 ? 0 : this.currentId + 1;
     }
   }
 }
