@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceCard } from '../../models/service-card.interface';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'services',
@@ -43,17 +42,17 @@ export class ServicesComponent implements OnInit {
     },
   ];
 
-  faCoffee = faCoffee;
-
   currentId: number = 1;
   currentService: ServiceCard = this.services[0];
-  nextInfo: boolean = true;
+  nextInfo: boolean = false;
 
   showId: number = 0;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.currentId);
+  }
 
   setCurrent(id: number) {
     // For Current display
@@ -74,11 +73,24 @@ export class ServicesComponent implements OnInit {
 
   change(direction: string) {
     if (direction === 'left') {
+      if (this.nextInfo) {
+        this.nextInfo = false;
+        return;
+      }
+
       this.currentId =
-        this.currentId == 0 ? this.services.length - 1 : this.currentId - 1;
+        this.currentId == 1 ? this.services.length : this.currentId - 1;
+
+      this.nextInfo = true;
     } else if (direction === 'right') {
+      if (!this.nextInfo) {
+        this.nextInfo = true;
+        return;
+      }
       this.currentId =
-        this.currentId == this.services.length - 1 ? 0 : this.currentId + 1;
+        this.currentId == this.services.length ? 1 : this.currentId + 1;
+      this.nextInfo = false;
     }
+    console.log(this.currentId);
   }
 }
