@@ -58,5 +58,6 @@ export class AboutComponent implements OnInit {
       this.triggerAnimation = false;
       this.currentImage = this.data[this.currentId].url;
     }, 300);
+    console.log(this.currentId);
   }
 }
