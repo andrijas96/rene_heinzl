@@ -20,7 +20,7 @@
 
   <!-- Mobile devices -->
   <div
-    class="contact-card relative z-[1] flex flex-col lg:flex-row justify-end md:justify-center items-center md:items-end w-3/4 h-5/6 md:w-11/12 md:h-96 py-5 md:py-11 px-3 md:px-8 rounded-[1.5em] bg-[rgba(34,51,72,0.8)] backdrop-blur lg:hidden"
+    class="contact-card relative z-[1] flex flex-col lg:flex-row justify-end md:justify-center items-center md:items-end w-3/4 h-5/6 md:w-11/12 md:h-96 py-5 pb-6 md:py-11 px-3 md:px-8 rounded-[1.5em] bg-[rgba(34,51,72,0.8)] backdrop-blur lg:hidden"
   >
     <div
       class="img-container absolute top-[8%] md:top-0 left-1/2 md:left-0 w-5/6 h-1/3 md:w-60 md:h-[26rem] md:border-4 border-primary/75 rounded-3xl md:rounded-[8rem] -translate-x-1/2 md:-translate-x-0 overflow-hidden"
@@ -36,12 +36,12 @@
       ></div>
     </div>
     <div
-      class="info-and-buttons md:relative flex flex-col justify-between w-11/12 md:w-2/3 h-2/3 md:h-full text-sm md:text-lg"
+      class="info-and-buttons md:relative flex flex-col justify-between w-11/12 md:w-2/3 h-2/3 md:h-full pl-0 md:pl-4 text-sm md:text-lg"
     >
-      <div class="info text-left mt-16 md:mt-4">
+      <div class="info text-left mt-12 md:mt-4">
         {{ data[currentId].text }}
       </div>
-      <div class="buttons flex justify-between">
+      <div class="buttons flex justify-between -mb-3">
         <button
           class="prev uppercase cursor-pointer"
           (click)="changeCard('prev')"
