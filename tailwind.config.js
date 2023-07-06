@@ -20,6 +20,7 @@ module.exports = {
         'primary/300': '#15283F',
         'primary/400': '#06182F',
         'primary/500': '#000916',
+        highlight: '#E99046',
       },
       animation: {
         myMoveInOne: 'myMoveInOne 0.8s ease-in',
