@@ -14,7 +14,7 @@
         Services
       </h2>
       <div
-        class="card flex flex-col justify-start w-11/12 xl:w-[32vw] h-max px-6 md:px-10 xl:px-14 py-4 md:py-7 xl:py-10 border border-primary/50 rounded-3xl bg-[rgba(21,40,63,0.8)] shadow-[0px_0px_128px_rgba(0,120,255,0.25)] backdrop-blur"
+        class="card flex flex-col justify-start w-11/12 xl:w-[36rem] h-max xl:min-h-[27rem] px-6 md:px-10 xl:px-14 py-4 md:py-7 xl:py-10 border border-primary/50 rounded-3xl bg-[rgba(21,40,63,0.8)] shadow-[0px_0px_128px_rgba(0,120,255,0.25)] backdrop-blur"
       >
         <div class="card-title text-lg md:text-2xl lg:text-4xl 2xl:text-5xl">
           {{ currentService.title }}
@@ -40,14 +40,14 @@
           {{ currentService.info[1] }}
         </p>
         <div
-          class="next absolute right-4 bottom-4 xl:right-8 xl:bottom-8 text-sm md:text-base lg:text-xl xl:text-xl 2xl:text-2xl uppercase cursor-pointer"
+          class="next absolute right-4 bottom-4 xl:right-8 xl:bottom-8 text-sm md:text-base lg:text-xl xl:text-xl 2xl:text-2xl uppercase cursor-pointer hover:text-primary/75"
           *ngIf="nextInfo"
           (click)="nextInfo = false"
         >
           Next
         </div>
         <div
-          class="next absolute bottom-4 right-4 md:bottom-8 md:right-8 text-sm md:text-2xl uppercase cursor-pointer"
+          class="next absolute right-4 bottom-4 xl:right-8 xl:bottom-8 text-sm md:text-base lg:text-xl xl:text-xl 2xl:text-2xl uppercase cursor-pointer hover:text-primary/75"
           *ngIf="!nextInfo"
           (click)="nextInfo = true"
         >
@@ -148,13 +148,13 @@
       </p>
     </div>
     <button
-      class="left absolute left-0 top-1/2 w-12 h-12 bg-white rounded-full text-[rgba(21,40,63,0.8)] -translate-x-1/4 -translate-y-2/3 cursor-pointer"
+      class="left absolute left-0 top-1/2 w-12 h-12 bg-white rounded-full text-[rgba(21,40,63,0.8)] -translate-x-1/4 -translate-y-2/3 cursor-pointer active:scale-90 active:text-primary/50 transition-all duration-300 ease-in"
       (click)="change('left')"
     >
       <i class="fa-solid fa-arrow-left text-xl font-bold"></i>
     </button>
     <button
-      class="right absolute right-0 top-1/2 w-12 h-12 bg-white rounded-full text-[rgba(21,40,63,0.8)] translate-x-1/4 -translate-y-2/3 cursor-pointer"
+      class="right absolute right-0 top-1/2 w-12 h-12 bg-white rounded-full text-[rgba(21,40,63,0.8)] translate-x-1/4 -translate-y-2/3 cursor-pointer active:scale-90 active:text-primary/50 transition-all duration-300 ease-in"
       (click)="change('right')"
     >
       <i class="fa-solid fa-arrow-right text-xl font-bold"></i>

@@ -62,7 +62,9 @@
         <div
           *ngFor="let dot of data"
           class="dot w-4 h-4 rounded-full transition-all duration-300"
-          [ngClass]="dot.id == currentId ? 'bg-primary/50' : 'bg-primary/500'"
+          [ngClass]="
+            dot.id == currentId ? 'bg-primary/50 scale-110' : 'bg-primary/500'
+          "
         ></div>
       </div>
     </div>
