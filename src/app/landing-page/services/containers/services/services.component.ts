@@ -44,7 +44,7 @@ export class ServicesComponent implements OnInit {
 
   currentId: number = 1;
   currentService: ServiceCard = this.services[0];
-  nextInfo: boolean = false;
+  nextInfo: boolean = true;
 
   showId: number = 0;
 
