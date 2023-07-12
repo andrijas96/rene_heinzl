@@ -10,7 +10,7 @@
     ></div>
   </div>
   <div
-    class="video-and-other absolute inset-0 z-0 w-screen h-screen xl:h-[62vw] overflow-hidden"
+    class="video-and-other absolute inset-0 z-0 w-full h-full overflow-hidden"
   >
     <div class="video-wrapper flex flex-col">
       <video
@@ -20,7 +20,7 @@
         [loop]="true"
         [muted]="true"
         disableRemotePlayback
-        class="w-full h-screen 2xl:h-[63vw] object-cover"
+        class="w-full h-[110vh] object-cover"
       >
         <source src="../../../../assets/landing-bg.mp4" type="video/mp4" />
       </video>
@@ -31,13 +31,13 @@
         [loop]="true"
         [muted]="true"
         disableRemotePlayback
-        class="absolute z-20 inset-0 top-10 md:top-0 w-full h-1/2 object-cover opacity-90"
+        class="absolute z-20 inset-0 top-10 md:top-0 w-full h-1/2 lg:h-3/4 object-cover opacity-90"
       >
         <source src="../../../../assets/sphere.mp4" type="video/mp4" />
       </video>
 
       <div
-        class="absolute left-0 bottom-0 h-1/2 w-full bg-black opacity-90"
+        class="absolute left-0 bottom-0 h-1/2 lg:h-1/4 w-full bg-black opacity-90"
       ></div>
     </div>
     <div
