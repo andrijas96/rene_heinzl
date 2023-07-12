@@ -11,7 +11,7 @@
     class="img-background-container absolute z-0 md:w-[102%] md:h-[102%] object-cover overflow-hidden"
   >
     <img
-      class="w-screen h-screen object-cover blur brightness-[0.3]"
+      class="w-full h-full object-cover blur brightness-[0.3]"
       [src]="card.url"
       alt=""
     />
@@ -28,7 +28,7 @@
     <img class="w-full h-full object-cover" [src]="card.url" alt="" />
   </div>
   <div
-    class="info w-0 md:h-[21vw] text-xs md:text-sm lg:text-lg xl:text-2xl text-left"
+    class="info w-0 md:h-[21vw] text-xs md:text-sm lg:text-lg xl:text-2xl 2xl:text-3xl text-left"
     [ngClass]="
       card.show
         ? 'w-60 md:w-[33vw]  md:p-10 p-2 z-30 opacity-100 flex justify-center items-center'
