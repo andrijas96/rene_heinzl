@@ -1,5 +1,5 @@
 <div
-  class="about-card-wrap flex items-center justify-center w-max h-60 md:h-[44vw] md:-mr-10 my-1 border-2 md:border-4 border-primary/75 rounded-[10vw] md:rounded-[14vw] overflow-hidden shadow-[0_0.2vw_2.8vw_rgba(0,120,255,0.73)]"
+  class="about-card-wrap flex items-center justify-center w-max h-60 md:h-[44vw] xl:h-[40rem] md:-mr-10 my-1 rounded-[10vw] md:rounded-[14vw] shadow-[0_0.2vw_2.8vw_rgba(0,120,255,0.73)]"
   [ngClass]="
     card.show
       ? 'show test md:absolute md:left-1/2 md:-translate-x-1/2 -translate-x-0'
@@ -8,20 +8,20 @@
   [ngStyle]="{ zIndex: 5 - card.id }"
 >
   <div
-    class="img-background-container absolute z-0 md:w-[102%] md:h-[102%] object-cover overflow-hidden"
+    class="img-background-container absolute z-0 w-full h-full border-2 md:border-4 border-primary/75 rounded-[18rem] object-cover overflow-hidden"
   >
     <img
-      class="w-full h-full object-cover blur brightness-[0.3]"
+      class="w-full h-full md:w-[102%] md:h-[102%] object-cover blur brightness-[0.3]"
       [src]="card.url"
       alt=""
     />
   </div>
   <div
-    class="img-container z-10 w-28 h-60 md:w-[26vw] md:h-[44vw] rounded-[10vw] md:rounded-[13vw] overflow-hidden cursor-pointer"
+    class="img-container z-10 w-28 h-60 md:w-96 md:h-[44vw] xl:h-[40rem] -ml-2 rounded-[10vw] md:rounded-[13vw] border-2 md:border-4 overflow-hidden cursor-pointer"
     [ngClass]="
       card.show
-        ? 'border-2 md:border-4 border-highlight'
-        : 'hover:brightness-[0.8] hover:shadow-[0_0.2vw_3.8vw_rgba(0,120,255,1.5)]'
+        ? 'border-highlight'
+        : ' border-primary/75  hover:brightness-[0.8] hover:shadow-[0_0.2vw_3.8vw_rgba(0,120,255,1.5)]'
     "
     (click)="onShow(card.id)"
   >
