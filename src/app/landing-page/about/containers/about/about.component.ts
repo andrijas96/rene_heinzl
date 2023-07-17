@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AboutCard } from '../../models/about-card.interface';
+
+import { register } from 'swiper/element/bundle';
 
 @Component({
   selector: 'about',
   templateUrl: './about.component.html',
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent implements OnInit, AfterViewInit {
   constructor() {}
 
   data: AboutCard[] = [
@@ -36,6 +38,10 @@ export class AboutComponent implements OnInit {
   currentImage: string = this.data[this.currentId].url;
 
   ngOnInit(): void {}
+
+  ngAfterViewInit(): void {
+    register();
+  }
 
   handleShow(id: number) {
     this.data.forEach((card: AboutCard) => {

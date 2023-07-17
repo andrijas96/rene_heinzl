@@ -124,6 +124,5 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         this.currentId == this.services.length ? 1 : this.currentId + 1;
       this.nextInfo = false;
     }
-    console.log(this.currentId);
   }
 }
