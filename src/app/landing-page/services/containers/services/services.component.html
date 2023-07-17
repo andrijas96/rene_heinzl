@@ -1,10 +1,10 @@
 <div
-  class="services-wrap relative flex flex-col justify-center items-center w-screen h-[36rem] md:h-[50vh] lg:h-screen lg:min-h-screen my-10 md:my-0"
+  class="services-wrap relative flex flex-col justify-center items-center w-screen h-[36rem] md:h-[50vh] lg:h-screen lg:min-h-screen my-10 md:my-0 md:justify-start"
 >
   <div class="anchor absolute top-[-25%] xl:top-[5%]" id="services"></div>
 
   <div
-    class="container absolute hidden md:flex flex-col-reverse md:flex-row justify-between items-center md:items-start top-[10%] left-1/2 -translate-x-1/2 w-screen h-full lg:mt-40"
+    class="container absolute hidden lg:flex flex-col-reverse md:flex-row justify-between items-center md:items-start top-[10%] left-1/2 -translate-x-1/2 w-screen h-full lg:mt-40"
   >
     <div
       class="info-container z-10 flex flex-col justify-start items-center h-1/2"
@@ -101,7 +101,9 @@
 
   <!-- Mobile Version -->
 
-  <div class="cards md:hidden relative top-8 w-11/12 h-[34rem] my-10">
+  <div
+    class="cards lg:hidden relative top-8 w-11/12 h-[34rem] md:h-[40rem] my-10"
+  >
     <div
       class="card absolute flex flex-col justify-start w-full h-full border border-primary/50 rounded-3xl bg-[rgba(21,40,63,0.8)] shadow-[0px_0px_128px_rgba(0,120,255,0.25)] backdrop-blur overflow-hidden opacity-0 transition-all duration-300"
       *ngFor="let card of services"
