@@ -1,5 +1,5 @@
 <div
-  class="about-card-wrap flex items-center justify-start w-max h-96 md:-mr-10 my-1 rounded-[10vw] md:rounded-[14vw] shadow-[0_0.2vw_2.8vw_rgba(0,120,255,0.73)]"
+  class="about-card-wrap flex items-center justify-start w-max h-96 2xl:h-[34rem] md:-mr-10 my-1 rounded-[17rem] shadow-[0_0.2vw_2.8vw_rgba(0,120,255,0.73)]"
   [ngClass]="
     card.show
       ? 'show test md:absolute md:left-1/2 w-[50rem] md:-translate-x-1/2 -translate-x-0'
@@ -8,7 +8,7 @@
   [ngStyle]="{ zIndex: 5 - card.id }"
 >
   <div
-    class="img-background-container absolute z-0 w-full h-96 border-2 md:border-4 border-primary/75 rounded-[18rem] object-cover overflow-hidden"
+    class="img-background-container absolute z-0 w-full h-96 2xl:h-[34rem] border-2 md:border-4 border-primary/75 rounded-[11rem] object-cover overflow-hidden"
   >
     <img
       class="absolute top-[-5%] w-full h-[110%] object-cover blur brightness-[0.3]"
@@ -17,7 +17,7 @@
     />
   </div>
   <div
-    class="img-container z-10 w-20 h-96 md:w-64 -ml-2 rounded-[10vw] md:rounded-[13vw] border-2 md:border-4 overflow-hidden cursor-pointer"
+    class="img-container z-10 w-20 h-96 2xl:h-[34rem] md:w-64 2xl:w-80 -ml-2 rounded-[11rem] border-2 md:border-4 overflow-hidden cursor-pointer"
     [ngClass]="
       card.show
         ? 'border-highlight'
@@ -31,7 +31,7 @@
     class="info w-0 md:h-[20rem] text-xs md:text-sm lg:text-sm xl:text-xl 2xl:text-2xl text-left"
     [ngClass]="
       card.show
-        ? 'w-60 md:w-[32rem]  md:py-10 md:px-8 p-2 z-30 opacity-100 flex justify-center items-center'
+        ? 'w-60 md:w-[32rem] 2xl:w-[40rem]  md:py-10 md:px-8 p-2 z-30 opacity-100 flex justify-center items-center'
         : 'opacity-0 p-0'
     "
   >
