@@ -1,5 +1,5 @@
 <div
-  class="nav-wrap fixed z-20 top-0 flex justify-between items-center w-screen h-16 md:h-24 bg-[#00040A]"
+  class="nav-wrap fixed z-20 top-0 flex justify-between items-center w-screen h-16 2xl:h-32 md:h-24 bg-[#00040A]"
 >
   <div
     class="img-container flex justify-center items-center h-full w-44 md:w-80 xl:w-96 mx-4 xl:mx-14"
@@ -7,7 +7,7 @@
     <img class="" src="../../../assets/rh_logo_w.png" alt="" />
   </div>
   <div
-    class="link-container fixed lg:static inset-0 flex flex-col lg:flex-row justify-evenly items-center w-screen h-screen lg:w-1/2 lg:h-full 2xl:mx-14 bg-[#00040A] font-SpaceGrotesk text-white text-3xl lg:text-lg xl:text-xl 2xl:text-2xl lg:translate-x-0 overflow-hidden transition-transform duration-300 ease-in"
+    class="link-container fixed lg:static inset-0 flex flex-col lg:flex-row justify-evenly items-center w-screen h-screen lg:w-1/2 lg:h-full 2xl:mx-14 bg-[#00040A] py-16 lg:py-0 font-SpaceGrotesk text-white text-3xl md:text-5xl lg:text-lg xl:text-xl 2xl:text-3xl lg:translate-x-0 overflow-hidden transition-transform duration-300 ease-in"
     [ngClass]="show ? 'translate-x-0' : 'translate-x-full'"
   >
     <a
@@ -25,25 +25,43 @@
     </button>
   </div>
   <div
-    class="absolute top-3 right-3 w-8 h-8 cursor-pointer lg:hidden"
+    class="absolute top-1/2 right-[5%] w-5 md:w-8 h-8 md:h-10 -translate-y-1/2 cursor-pointer lg:hidden"
     (click)="show = !show"
   >
-    <div
-      *ngIf="!show"
-      class="flex flex-col justify-center items-center w-full h-full"
-    >
-      <span class="w-5 h-0.5 bg-white rounded-full"></span>
-      <span class="w-5 h-0.5 mt-1 bg-white rounded-full"></span>
-      <span class="w-5 h-0.5 mt-1 bg-white rounded-full"></span>
+    <div class="relative w-full h-full">
+      <span
+        class="h-0.5 absolute bg-white rounded-full -translate-y-1/2 transition-all duration-200 ease-in"
+        [ngClass]="
+          show
+            ? 'top-1/2 left-1/2 -translate-x-1/2 w-0'
+            : 'top-1/4 left-0 w-full'
+        "
+      ></span>
+      <span
+        class="w-full h-0.5 absolute top-1/2 -translate-y-1/2 bg-white rounded-full transition-transform duration-200 ease-in"
+        [ngClass]="show ? ' rotate-45' : 'rotate-0'"
+      ></span>
+      <span
+        class="w-full h-0.5 absolute top-1/2 -translate-y-1/2 bg-white rounded-full transition-transform duration-200 ease-in"
+        [ngClass]="show ? ' -rotate-45' : ' rotate-0'"
+      ></span>
+      <span
+        class="h-0.5 absolute bg-white rounded-full -translate-y-1/2 transition-all duration-200 ease-in"
+        [ngClass]="
+          show
+            ? 'top-1/2 left-1/2 -translate-x-1/2  w-0'
+            : 'top-3/4 left-0 w-full '
+        "
+      ></span>
     </div>
 
-    <div *ngIf="show" class="relative w-full h-full">
+    <!-- <div *ngIf="show" class="relative w-full h-full">
       <span
         class="absolute top-1/2 left-1/2 w-6 h-0.5 bg-white -translate-x-1/2 -rotate-45"
       ></span>
       <span
         class="absolute top-1/2 left-1/2 w-6 h-0.5 bg-white -translate-x-1/2 rotate-45"
       ></span>
-    </div>
+    </div> -->
   </div>
 </div>
