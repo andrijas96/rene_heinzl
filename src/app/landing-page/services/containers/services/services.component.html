@@ -103,6 +103,8 @@
     loop="true"
     [spaceBetween]="40"
     effect="cube"
+    [autoplay]="true"
+    [speed]="2000"
   >
     <swiper-slide
       class="card flex flex-col justify-start w-full h-full border border-primary/50 rounded-3xl bg-[rgba(21,40,63,0.8)] backdrop-blur overflow-hidden"
@@ -128,66 +130,16 @@
       </div>
 
       <p
-        class="info h-max md:h-1/2 px-6 py-3 md:px-10 md:py-10 text-sm md:text-xl leading-loose"
-      >
-        {{ card.info[0] }}
-      </p>
-    </swiper-slide>
-  </swiper-container>
-  <!-- <div
-    class="cards lg:hidden relative top-8 w-11/12 md:w-3/4 h-[34rem] md:h-[40rem] my-10"
-  >
-    <div
-      class="card absolute flex flex-col justify-start w-full h-full border border-primary/50 rounded-3xl bg-[rgba(21,40,63,0.8)] shadow-[0px_0px_128px_rgba(0,120,255,0.25)] backdrop-blur overflow-hidden opacity-0 transition-all duration-300"
-      *ngFor="let card of services"
-      [ngClass]="{
-        '-translate-x-0 opacity-100': card.id == currentId,
-        '-translate-x-full':
-          (currentId == 3 && card.id == 2) ||
-          (currentId == 2 && card.id == 1) ||
-          (currentId == 1 && card.id == 3),
-        'translate-x-full':
-          (currentId == 3 && card.id == 1) ||
-          (currentId == 2 && card.id == 3) ||
-          (currentId == 1 && card.id == 2)
-      }"
-    >
-      <div class="title-and-image relative h-64">
-        <img
-          class="absolute top-0 w-full h-full object-cover brightness-75"
-          [src]="card.url"
-          alt=""
-        />
-        <div class="card-title absolute left-3 bottom-0 text-lg text-white">
-          {{ card.title }}
-          <div
-            class="card-title-info flex items-center my-3 xl:pb-4 text-base uppercase"
-          >
-            <div
-              class="eclipse w-3.5 h-3.5 mr-4 rounded-full bg-highlight"
-            ></div>
-            {{ card.subtitle }}
-          </div>
-        </div>
-      </div>
-
-      <p
-        class="info h-max md:h-1/2 px-6 py-3 md:px-10 md:py-10 text-sm md:text-xl leading-loose"
+        class="info h-max md:h-1/2 px-6 py-3 md:px-10 md:py-10 text-sm md:text-xl leading-5 md:leading-loose"
       >
         {{ card.info[nextInfo ? 0 : 1] }}
       </p>
-    </div>
-    <button
-      class="left absolute left-0 top-1/2 w-12 h-12 bg-white rounded-full text-[rgba(21,40,63,0.8)] -translate-x-1/4 -translate-y-2/3 cursor-pointer active:scale-90 active:text-primary/50 transition-all duration-300 ease-in"
-      (click)="change('left')"
-    >
-      <i class="fa-solid fa-arrow-left text-xl font-bold"></i>
-    </button>
-    <button
-      class="right absolute right-0 top-1/2 w-12 h-12 bg-white rounded-full text-[rgba(21,40,63,0.8)] translate-x-1/4 -translate-y-2/3 cursor-pointer active:scale-90 active:text-primary/50 transition-all duration-300 ease-in"
-      (click)="change('right')"
-    >
-      <i class="fa-solid fa-arrow-right text-xl font-bold"></i>
-    </button>
-  </div> -->
+      <div
+        class="next z-40 absolute right-4 bottom-4 xl:right-8 xl:bottom-8 w-24 h-7 text-right text-sm md:text-base lg:text-xl xl:text-xl 2xl:text-2xl uppercase cursor-pointer hover:text-primary/75"
+        (click)="nextInfo = !nextInfo"
+      >
+        Next
+      </div>
+    </swiper-slide>
+  </swiper-container>
 </div>

@@ -27,6 +27,8 @@
     class="cards lg:hidden w-11/12 h-[34rem] md:h-[40rem] mb-24"
     loop="true"
     [spaceBetween]="40"
+    [autoplay]="true"
+    [speed]="1800"
   >
     <swiper-slide
       class="contact-card relative z-[1] flex flex-col lg:flex-row justify-end md:justify-center items-center md:items-end w-11/12 h-[32rem] md:h-96 py-5 pb-6 md:py-11 rounded-[1.5em] bg-[rgba(34,51,72,0.8)] backdrop-blur lg:hidden"
@@ -44,61 +46,10 @@
       <div
         class="info-and-buttons md:relative flex flex-col justify-center w-11/12 md:w-2/3 h-2/3 md:h-full pl-0 md:pl-4 text-sm md:text-lg"
       >
-        <div class="info text-left mt-12 md:mt-4">
+        <div class="info text-left mt-12 md:mt-4 px-4">
           {{ card.text }}
         </div>
       </div>
     </swiper-slide>
   </swiper-container>
-
-  <!-- <div
-    class="contact-card relative z-[1] flex flex-col lg:flex-row justify-end md:justify-center items-center md:items-end w-11/12 h-[32rem] md:w-11/12 md:h-96 py-5 pb-6 md:py-11 px-3 md:px-8 rounded-[1.5em] bg-[rgba(34,51,72,0.8)] backdrop-blur lg:hidden"
-  >
-    <div
-      class="img-container absolute top-[8%] md:top-1/2 left-1/2 md:left-0 w-5/6 h-44 md:w-60 md:h-[26rem] md:border-4 border-primary/75 rounded-3xl md:rounded-[8rem] md:-translate-y-1/2 -translate-x-1/2 md:-translate-x-0 overflow-hidden"
-    >
-      <img
-        class="w-full h-96 md:h-full object-cover"
-        [src]="currentImage"
-        alt=""
-      />
-      <div
-        class="background-cover absolute inset-0 w-full h-full bg-primary/75 opacity-0 transition duration-300"
-        [ngClass]="triggerAnimation ? 'opacity-100' : 'opacity-0'"
-      ></div>
-    </div>
-    <div
-      class="info-and-buttons md:relative flex flex-col justify-between w-11/12 md:w-2/3 h-2/3 md:h-full pl-0 md:pl-4 text-sm md:text-lg"
-    >
-      <div class="info text-left mt-12 md:mt-4">
-        {{ data[currentId].text }}
-      </div>
-      <div class="buttons flex justify-between -mb-3">
-        <button
-          class="prev uppercase cursor-pointer"
-          (click)="changeCard('prev')"
-        >
-          Prev
-        </button>
-        <button
-          class="next uppercase cursor-pointer"
-          (click)="changeCard('next')"
-        >
-          Next
-        </button>
-      </div>
-
-      <div
-        class="dots absolute top-[3%] md:top-0 left-1/2 flex justify-between items-center w-20 -translate-x-1/2 md:-translate-y-full"
-      >
-        <div
-          *ngFor="let dot of data"
-          class="dot w-4 h-4 rounded-full transition-all duration-300"
-          [ngClass]="
-            dot.id == currentId ? 'bg-primary/50 scale-110' : 'bg-primary/500'
-          "
-        ></div>
-      </div>
-    </div>
-  </div> -->
 </div>

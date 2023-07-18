@@ -31,12 +31,6 @@ export class AboutComponent implements OnInit, AfterViewInit {
     },
   ];
 
-  currentId: number = 0;
-  currentCard: AboutCard = this.data[this.currentId];
-
-  triggerAnimation: boolean = false;
-  currentImage: string = this.data[this.currentId].url;
-
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
@@ -47,23 +41,5 @@ export class AboutComponent implements OnInit, AfterViewInit {
     this.data.forEach((card: AboutCard) => {
       card.show = card.id == id;
     });
-  }
-
-  changeCard(direction: string) {
-    if (direction === 'prev') {
-      this.currentId =
-        this.currentId == 0 ? this.data.length - 1 : this.currentId - 1;
-    }
-    if (direction === 'next') {
-      this.currentId =
-        this.currentId == this.data.length - 1 ? 0 : this.currentId + 1;
-    }
-
-    this.triggerAnimation = true;
-    setTimeout(() => {
-      this.triggerAnimation = false;
-      this.currentImage = this.data[this.currentId].url;
-    }, 300);
-    console.log(this.currentId);
   }
 }
