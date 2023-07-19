@@ -1,4 +1,10 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 import { AboutCard } from '../../models/about-card.interface';
 
 import { register } from 'swiper/element/bundle';
@@ -8,6 +14,18 @@ import { register } from 'swiper/element/bundle';
   templateUrl: './about.component.html',
 })
 export class AboutComponent implements OnInit, AfterViewInit {
+  @ViewChild('swiper')
+  swiperRef: ElementRef | undefined;
+
+  changeSlide(direction: string) {
+    let speed = 300;
+    let runCallbacks = true;
+    if (direction == 'next') {
+      this.swiperRef?.nativeElement.swiper.slideNext(speed, runCallbacks);
+    } else {
+      this.swiperRef?.nativeElement.swiper.slidePrev(speed, runCallbacks);
+    }
+  }
   constructor() {}
 
   data: AboutCard[] = [

@@ -22,34 +22,45 @@
   </div>
 
   <!-- Mobile devices -->
-
-  <swiper-container
-    class="cards lg:hidden w-11/12 h-[34rem] md:h-[40rem] mb-24"
-    loop="true"
-    [spaceBetween]="40"
-    [autoplay]="true"
-    [speed]="1800"
+  <div
+    class="swiper-button-container relative lg:hidden w-11/12 h-[34rem] md:h-[40rem] mb-24"
   >
-    <swiper-slide
-      class="contact-card relative z-[1] flex flex-col lg:flex-row justify-end md:justify-center items-center md:items-end w-11/12 h-[32rem] md:h-96 py-5 pb-6 md:py-11 rounded-[1.5em] bg-[rgba(34,51,72,0.8)] backdrop-blur lg:hidden"
-      *ngFor="let card of data"
-    >
-      <div
-        class="img-container absolute top-[8%] md:top-1/2 left-1/2 md:left-0 w-5/6 h-44 md:w-60 md:h-full md:border-4 border-primary/75 rounded-3xl md:rounded-[8rem] md:-translate-y-1/2 -translate-x-1/2 md:-translate-x-0 overflow-hidden"
+    <swiper-container class="cards" loop="true" [spaceBetween]="40" #swiper>
+      <swiper-slide
+        class="contact-card relative z-[1] flex flex-col lg:flex-row justify-end md:justify-center items-center md:items-end w-11/12 h-[32rem] md:h-96 py-5 pb-6 md:py-11 rounded-[1.5em] bg-[rgba(34,51,72,0.8)] backdrop-blur lg:hidden"
+        *ngFor="let card of data"
       >
-        <img
-          class="w-full h-96 md:h-full object-cover"
-          [src]="card.url"
-          alt=""
-        />
-      </div>
-      <div
-        class="info-and-buttons md:relative flex flex-col justify-center w-11/12 md:w-2/3 h-2/3 md:h-full pl-0 md:pl-4 text-sm md:text-lg"
-      >
-        <div class="info text-left mt-12 md:mt-4 px-4">
-          {{ card.text }}
+        <div
+          class="img-container absolute top-[8%] md:top-1/2 left-1/2 md:left-0 w-5/6 h-44 md:w-60 md:h-full md:border-4 border-primary/75 rounded-3xl md:rounded-[8rem] md:-translate-y-1/2 -translate-x-1/2 md:-translate-x-0 overflow-hidden"
+        >
+          <img
+            class="w-full h-96 md:h-full object-cover"
+            [src]="card.url"
+            alt=""
+          />
         </div>
-      </div>
-    </swiper-slide>
-  </swiper-container>
+        <div
+          class="info-and-buttons md:relative flex flex-col justify-center w-11/12 md:w-2/3 h-2/3 md:h-full pl-0 md:pl-4 text-sm md:text-lg"
+        >
+          <div class="info text-left mt-12 md:mt-4 px-4">
+            {{ card.text }}
+          </div>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+    <div
+      class="button-container absolute z-10 top-1/2 left-1/2 flex flex-row justify-between items-center w-11/12 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+    >
+      <button (click)="changeSlide('prev')">
+        <div
+          class="h-5 w-5 border-t-2 border-l-2 border-gray-300 -rotate-45 transition-transform active:scale-110 active:border-white pointer-events-auto"
+        ></div>
+      </button>
+      <button (click)="changeSlide('next')">
+        <div
+          class="h-5 w-5 border-t-2 border-r-2 border-gray-300 rotate-45 transition-transform active:scale-110 active:border-white pointer-events-auto"
+        ></div>
+      </button>
+    </div>
+  </div>
 </div>
