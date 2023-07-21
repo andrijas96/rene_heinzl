@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { ServiceCard } from '../../models/service-card.interface';
 
 import { register } from 'swiper/element/bundle';
@@ -8,6 +14,9 @@ import { register } from 'swiper/element/bundle';
   templateUrl: './services.component.html',
 })
 export class ServicesComponent implements OnInit, AfterViewInit {
+  @ViewChild('swiper')
+  swiperRef: ElementRef | undefined;
+
   services: ServiceCard[] = [
     {
       id: 1,
@@ -80,7 +89,18 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     }
   }
 
-  onSlideChange() {
-    this.nextInfo = false;
+  changeSlide(direction: string) {
+    let speed = 300;
+    let runCallbacks = true;
+
+    if (direction == 'prev') {
+      this.nextInfo
+        ? this.swiperRef?.nativeElement.swiper.slidePrev(speed, runCallbacks)
+        : (this.nextInfo = true);
+    } else if (direction == 'next') {
+      !this.nextInfo
+        ? this.swiperRef?.nativeElement.swiper.slideNext(speed, runCallbacks)
+        : (this.nextInfo = false);
+    }
   }
 }

@@ -102,48 +102,62 @@
   </div>
 
   <!-- Mobile Version -->
-
-  <swiper-container
-    class="cards lg:hidden top-8 w-11/12 md:w-3/4 h-[34rem] md:h-[40rem] my-10"
-    loop="true"
-    [spaceBetween]="40"
-    effect="cube"
-    [speed]="2000"
+  <div
+    class="swiper-and-buttons relative lg:hidden top-8 w-11/12 md:w-3/4 h-[34rem] md:h-[45rem] my-10"
   >
-    <swiper-slide
-      class="card flex flex-col justify-start w-full h-full border border-primary/50 rounded-3xl bg-[rgba(21,40,63,0.8)] backdrop-blur overflow-hidden"
-      *ngFor="let card of services"
+    <swiper-container
+      class="cards w-full h-full"
+      loop="true"
+      [spaceBetween]="40"
+      effect="cube"
+      [speed]="2000"
+      #swiper
     >
-      <div class="title-and-image relative h-64">
-        <img
-          class="absolute top-0 w-full h-full object-cover brightness-75"
-          [src]="card.url"
-          alt=""
-        />
-        <div class="card-title absolute left-3 bottom-0 text-lg text-white">
-          {{ card.title }}
-          <div
-            class="card-title-info flex items-center my-3 xl:pb-4 text-base uppercase"
-          >
+      <swiper-slide
+        class="card flex flex-col justify-start w-full h-full border border-primary/50 rounded-3xl bg-[rgba(21,40,63,0.8)] backdrop-blur overflow-hidden"
+        *ngFor="let card of services"
+      >
+        <div class="title-and-image relative h-64">
+          <img
+            class="absolute top-0 w-full h-full object-cover brightness-75"
+            [src]="card.url"
+            alt=""
+          />
+          <div class="card-title absolute left-3 bottom-0 text-lg text-white">
+            {{ card.title }}
             <div
-              class="eclipse w-3.5 h-3.5 mr-4 rounded-full bg-highlight"
-            ></div>
-            {{ card.subtitle }}
+              class="card-title-info flex items-center my-3 xl:pb-4 text-base uppercase"
+            >
+              <div
+                class="eclipse w-3.5 h-3.5 mr-4 rounded-full bg-highlight"
+              ></div>
+              {{ card.subtitle }}
+            </div>
           </div>
         </div>
-      </div>
 
-      <p
-        class="info h-max md:h-1/2 px-6 py-3 md:px-10 md:py-10 text-sm md:text-xl leading-5 md:leading-loose"
-      >
-        {{ card.info[nextInfo ? 0 : 1] }}
-      </p>
+        <p
+          class="info h-max md:h-1/2 px-6 py-3 md:px-10 md:py-10 text-sm md:text-xl leading-5 md:leading-loose"
+        >
+          {{ card.info[nextInfo ? 0 : 1] }}
+        </p>
+      </swiper-slide>
+    </swiper-container>
+    <div
+      class="buttons-container z-40 absolute left-1/2 bottom-4 flex justify-between items-center w-10/12 h-7 text-sm md:text-base lg:text-xl xl:text-xl 2xl:text-2xl uppercase cursor-pointer -translate-x-1/2 pointer-events-none"
+    >
       <div
-        class="next z-40 absolute right-4 bottom-4 xl:right-8 xl:bottom-8 w-24 h-7 text-right text-sm md:text-base lg:text-xl xl:text-xl 2xl:text-2xl uppercase cursor-pointer hover:text-primary/75"
-        (click)="nextInfo = !nextInfo"
+        class="back transition-transform active:scale-110 active:text-primary/75 pointer-events-auto"
+        (click)="changeSlide('prev')"
+      >
+        Back
+      </div>
+      <div
+        class="next transition-transform active:scale-110 active:text-primary/75 pointer-events-auto"
+        (click)="changeSlide('next')"
       >
         Next
       </div>
-    </swiper-slide>
-  </swiper-container>
+    </div>
+  </div>
 </div>

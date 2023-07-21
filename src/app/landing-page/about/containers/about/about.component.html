@@ -25,7 +25,16 @@
   <div
     class="swiper-button-container relative lg:hidden w-11/12 h-[34rem] md:h-[40rem]"
   >
-    <swiper-container class="cards" loop="true" [spaceBetween]="40" #swiper>
+    <div
+      class="dots container absolute z-30 top-[2%] left-1/2 flex justify-between items-center -translate-x-1/2 w-1/4"
+    >
+      <div
+        *ngFor="let dot of [0, 1, 2]"
+        class="dot w-4 h-4 bg-primary/400 rounded-full transition-all delay-150 duration-500"
+        [ngClass]="activeIndex == dot ? 'bg-white scale-110' : 'bg-primary/400'"
+      ></div>
+    </div>
+    <swiper-container loop="true" [spaceBetween]="40" #swiper>
       <swiper-slide
         class="contact-card relative z-[1] flex flex-col lg:flex-row justify-end md:justify-center items-center md:items-end w-11/12 h-[32rem] md:h-96 py-5 pb-6 md:py-11 rounded-[1.5em] bg-[rgba(34,51,72,0.8)] backdrop-blur lg:hidden"
         *ngFor="let card of data"
@@ -51,12 +60,12 @@
     <div
       class="button-container absolute z-10 top-1/2 left-1/2 flex flex-row justify-between items-center w-11/12 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
     >
-      <button (click)="changeSlide('prev')">
+      <button (click)="changeSlide('prev')" #prev>
         <div
           class="h-5 w-5 border-t-2 border-l-2 border-gray-300 -rotate-45 transition-transform active:scale-110 active:border-white pointer-events-auto"
         ></div>
       </button>
-      <button (click)="changeSlide('next')">
+      <button (click)="changeSlide('next')" #next>
         <div
           class="h-5 w-5 border-t-2 border-r-2 border-gray-300 rotate-45 transition-transform active:scale-110 active:border-white pointer-events-auto"
         ></div>

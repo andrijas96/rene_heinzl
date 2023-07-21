@@ -16,16 +16,11 @@ import { register } from 'swiper/element/bundle';
 export class AboutComponent implements OnInit, AfterViewInit {
   @ViewChild('swiper')
   swiperRef: ElementRef | undefined;
+  @ViewChild('prev')
+  prevRef: ElementRef | undefined;
+  @ViewChild('next')
+  nextRef: ElementRef | undefined;
 
-  changeSlide(direction: string) {
-    let speed = 300;
-    let runCallbacks = true;
-    if (direction == 'next') {
-      this.swiperRef?.nativeElement.swiper.slideNext(speed, runCallbacks);
-    } else {
-      this.swiperRef?.nativeElement.swiper.slidePrev(speed, runCallbacks);
-    }
-  }
   constructor() {}
 
   data: AboutCard[] = [
@@ -49,10 +44,30 @@ export class AboutComponent implements OnInit, AfterViewInit {
     },
   ];
 
+  activeIndex: number = 0;
+
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     register();
+  }
+
+  changeSlide(direction: string) {
+    let speed = 300;
+    let runCallbacks = true;
+    if (direction == 'next') {
+      this.swiperRef?.nativeElement.swiper.slideNext(speed, runCallbacks);
+      this.activeIndex = this.activeIndex < 2 ? this.activeIndex + 1 : 0;
+    } else {
+      this.swiperRef?.nativeElement.swiper.slidePrev(speed, runCallbacks);
+      this.activeIndex = this.activeIndex > 0 ? this.activeIndex - 1 : 2;
+    }
+    this.prevRef?.nativeElement.setAttribute('disabled', 'true');
+    this.nextRef?.nativeElement.setAttribute('disabled', 'true');
+    setTimeout(() => {
+      this.prevRef?.nativeElement.removeAttribute('disabled');
+      this.nextRef?.nativeElement.removeAttribute('disabled');
+    }, speed);
   }
 
   handleShow(id: number) {
