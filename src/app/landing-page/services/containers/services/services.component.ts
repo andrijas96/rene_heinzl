@@ -17,6 +17,9 @@ export class ServicesComponent implements OnInit, AfterViewInit {
   @ViewChild('swiper')
   swiperRef: ElementRef | undefined;
 
+  @ViewChild('logo')
+  logoRef: ElementRef | undefined;
+
   services: ServiceCard[] = [
     {
       id: 1,
@@ -28,6 +31,8 @@ export class ServicesComponent implements OnInit, AfterViewInit {
       ],
       url: '../../../../assets/Kopie von 230201-ReneHeinzl-Manevera-Shooting-030.jpg',
       show: false,
+      logoUrl: '../../../../assets/rh_logo_nofont_rot.png',
+      color: 'cube-rot',
     },
 
     {
@@ -41,6 +46,8 @@ export class ServicesComponent implements OnInit, AfterViewInit {
       ],
       url: '../../../../assets/Kopie von 230201-ReneHeinzl-Manevera-Shooting-024.jpg',
       show: false,
+      logoUrl: '../../../../assets/rh_logo_nofont_blau.png',
+      color: 'cube-blau',
     },
 
     {
@@ -53,11 +60,14 @@ export class ServicesComponent implements OnInit, AfterViewInit {
       ],
       url: '../../../../assets/Kopie von 230201-ReneHeinzl-Manevera-Shooting-052.jpg',
       show: false,
+      logoUrl: '../../../../assets/rh_logo_nofont_orange.png',
+      color: 'cube-orange',
     },
   ];
 
   currentId: number = 1;
   currentService: ServiceCard = this.services[0];
+  currentLogo: string = this.services[0].logoUrl;
   nextInfo: boolean = true;
 
   showId: number = 0;
@@ -73,6 +83,11 @@ export class ServicesComponent implements OnInit, AfterViewInit {
   }
 
   setCurrent(id: number) {
+    //Trigger logo animation
+    if (id != this.currentService.id) {
+      this.triggerLogoAnimation(id);
+    }
+
     // For Current display
     this.nextInfo = true;
     this.currentService = this.services[id - 1];
@@ -89,18 +104,34 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     }
   }
 
+  triggerLogoAnimation(id: number) {
+    this.logoRef?.nativeElement.classList.add('opacity-10', 'grayscale');
+    setTimeout(() => {
+      this.currentLogo = this.services[id - 1].logoUrl;
+    }, 350);
+    setTimeout(() => {
+      this.logoRef?.nativeElement.classList.remove('opacity-10', 'grayscale');
+    }, 700);
+  }
+
   changeSlide(direction: string) {
     let speed = 300;
     let runCallbacks = true;
 
     if (direction == 'prev') {
-      this.nextInfo
-        ? this.swiperRef?.nativeElement.swiper.slidePrev(speed, runCallbacks)
-        : (this.nextInfo = true);
+      if (this.nextInfo) {
+        this.swiperRef?.nativeElement.swiper.slidePrev(speed, runCallbacks);
+        this.nextInfo = false;
+      } else {
+        this.nextInfo = true;
+      }
     } else if (direction == 'next') {
-      !this.nextInfo
-        ? this.swiperRef?.nativeElement.swiper.slideNext(speed, runCallbacks)
-        : (this.nextInfo = false);
+      if (!this.nextInfo) {
+        this.swiperRef?.nativeElement.swiper.slideNext(speed, runCallbacks);
+        this.nextInfo = true;
+      } else {
+        this.nextInfo = false;
+      }
     }
   }
 }

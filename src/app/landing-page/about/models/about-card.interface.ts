@@ -3,4 +3,5 @@ export interface AboutCard {
   url: string;
   text: string;
   show: boolean;
+  color: string;
 }

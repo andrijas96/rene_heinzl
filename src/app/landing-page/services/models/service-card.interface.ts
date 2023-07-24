@@ -5,4 +5,6 @@ export interface ServiceCard {
   info: string[];
   url: string;
   show: boolean;
+  logoUrl: string;
+  color: string;
 }

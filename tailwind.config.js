@@ -21,6 +21,10 @@ module.exports = {
         'primary/400': '#06182F',
         'primary/500': '#000916',
         highlight: '#E99046',
+
+        'cube-blau': '#ACDEFA',
+        'cube-orange': '#FF8C2D',
+        'cube-rot': '#E74242',
       },
       animation: {
         myMoveInOne: 'myMoveInOne 0.8s ease-in',
