@@ -21,7 +21,6 @@ module.exports = {
         'primary/400': '#06182F',
         'primary/500': '#000916',
         highlight: '#E99046',
-
         'cube-blau': '#ACDEFA',
         'cube-orange': '#FF8C2D',
         'cube-rot': '#E74242',
@@ -35,6 +34,12 @@ module.exports = {
         myMoveOutThree: 'myMoveOutThree 0.5s ease-in',
         contact: 'contact 15s linear infinite',
         contact2: 'contact 15s linear 7.5s infinite',
+        acMove1: 'acMove1 0.3s ease-in',
+        acMove2: 'acMove2 0.5s ease-in',
+        acMove3: 'acMove3 1s ease-in',
+        acMoveOut1: 'acMoveOut1 0.3s linear  ',
+        acMoveOut2: 'acMoveOut2 0.3s linear ',
+        acMoveOut3: 'acMoveOut3 0.3s linear ',
       },
       keyframes: {
         myMoveInOne: {
@@ -73,6 +78,90 @@ module.exports = {
           },
           '100%': {
             left: '-100%',
+          },
+        },
+        acMove1: {
+          '0%': {
+            left: '0%',
+            transform: 'scale(1)',
+          },
+          '20%': {
+            left: '-5%',
+            transform: 'scale(1.05)',
+          },
+          '100%': {
+            left: '-5%',
+            transform: 'scale(1.05)',
+          },
+        },
+        acMove2: {
+          '0%': {
+            left: '33%',
+            transform: 'scale(1)',
+          },
+          '20%': {
+            left: '33%',
+            transform: 'scale(1.05)',
+          },
+          '100%': {
+            left: '0%',
+            transform: 'scale(1.05)',
+          },
+        },
+        acMove3: {
+          '0%': {
+            left: '66%',
+            transform: 'scale(1)',
+          },
+          '20%': {
+            left: '0%',
+            transform: 'scale(1.05)',
+          },
+          '100%': {
+            left: '0%',
+            transform: 'scale(1.05)',
+          },
+        },
+        acMoveOut1: {
+          '0%': {
+            left: '-5%',
+            transform: 'scale(1.05)',
+          },
+          '20%': {
+            left: '-5%',
+            transform: 'scale(1)',
+          },
+          '100%': {
+            left: '0%',
+            transform: 'scale(1)',
+          },
+        },
+        acMoveOut2: {
+          '0%': {
+            left: '0%',
+            transform: 'scale(1.05)',
+          },
+          '20%': {
+            left: '33%',
+            transform: 'scale(1)',
+          },
+          '100%': {
+            left: '33%',
+            transform: 'scale(1)',
+          },
+        },
+        acMoveOut3: {
+          '0%': {
+            left: '0%',
+            transform: 'scale(1.05)',
+          },
+          '20%': {
+            left: '0%',
+            transform: 'scale(1)',
+          },
+          '100%': {
+            left: '66%',
+            transform: 'scale(1)',
           },
         },
       },
