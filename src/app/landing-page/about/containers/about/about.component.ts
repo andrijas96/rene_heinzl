@@ -2,6 +2,7 @@ import {
   Component,
   OnInit,
   AfterViewInit,
+  Input,
   ViewChild,
   ElementRef,
 } from '@angular/core';
@@ -49,6 +50,8 @@ export class AboutComponent implements OnInit, AfterViewInit {
 
   activeIndex: number = 0;
 
+  currentId: number = 0;
+
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
@@ -73,9 +76,30 @@ export class AboutComponent implements OnInit, AfterViewInit {
     }, speed);
   }
 
-  handleShow(id: number) {
+  handleShow(event: number) {
+    this.currentId = event;
     this.data.forEach((card: AboutCard) => {
-      card.show = card.id == id;
+      card.show = card.id == event;
     });
+
+    // console.log('handleShow: ', event);
+  }
+
+  handleCard(event: string) {
+    //Set all to false
+    this.data.forEach((card: AboutCard) => (card.show = false));
+
+    if (event === 'next' && this.currentId < this.data.length) {
+      this.currentId++;
+    } else if (event === 'back' && this.currentId > 0) {
+      this.currentId -= 1;
+    } else {
+      return;
+    }
+
+    setTimeout(() => {
+      this.handleShow(this.currentId);
+    }, 400);
+    // console.log('handleCard: ', event);
   }
 }

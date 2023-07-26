@@ -36,10 +36,10 @@
     />
   </div>
   <div
-    class="info w-0 md:h-[20rem] text-xs md:text-sm lg:text-sm xl:text-xl 2xl:text-2xl text-left transition-all"
+    class="info relative w-0 md:h-[20rem] text-xs md:text-sm lg:text-sm xl:text-base 2xl:text-2xl text-left transition-all"
     [ngClass]="
       card.show
-        ? 'expand w-60 md:w-[32rem] 2xl:w-[40rem]  md:py-10 md:px-8 p-2 z-30 opacity-100 flex justify-center items-center delay-500'
+        ? 'expand w-60 md:w-[32rem] 2xl:w-[35rem]  md:py-10 md:px-8 p-2 z-30 opacity-100 flex justify-center items-center delay-500'
         : 'transition-all duration-100 delay-100 w-0'
     "
   >
@@ -47,11 +47,41 @@
       class="pointer-events-none"
       [ngClass]="
         card.show
-          ? '  opacity-100 transition-opacity duration-300 delay-700'
+          ? ' opacity-100 transition-opacity duration-300 delay-700'
           : ' opacity-0 transition-opacity duration-100 '
       "
     >
       {{ card.text }}
     </p>
+    <div
+      class="button-wrap absolute flex justify-between items-center left-[6%] bottom-0 2xl:bottom-[-20%] w-2/3 text-left"
+      [ngClass]="
+        card.show
+          ? ' opacity-100 transition-opacity duration-300 delay-700'
+          : ' opacity-0 transition-opacity duration-100 '
+      "
+    >
+      <button
+        class="prev cursor-pointer hover:text-primary/75"
+        (click)="changeCard('back')"
+        [ngClass]="{ 'opacity-0 pointer-events-none': card.id == 0 }"
+      >
+        Back
+      </button>
+      <button
+        class="next cursor-pointer hover:text-primary/75"
+        (click)="changeCard('next')"
+        *ngIf="card.id !== 2"
+      >
+        Next
+      </button>
+      <button
+        class="next cursor-pointer hover:text-primary/75"
+        (click)="changeCard('next')"
+        *ngIf="card.id == 2"
+      >
+        Close
+      </button>
+    </div>
   </div>
 </div>

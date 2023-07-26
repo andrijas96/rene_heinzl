@@ -12,11 +12,18 @@ export class AboutCardComponent implements OnInit {
   @Output()
   setShow: EventEmitter<number> = new EventEmitter<number>();
 
+  @Output()
+  setCard: EventEmitter<string> = new EventEmitter<string>();
+
   constructor() {}
 
   ngOnInit(): void {}
 
   onShow(id: number) {
     this.card.show ? (this.card.show = false) : this.setShow.emit(id);
+  }
+
+  changeCard(direction: string) {
+    this.setCard.emit(direction);
   }
 }

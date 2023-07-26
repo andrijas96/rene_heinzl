@@ -11,13 +11,14 @@
     Get to know <span class="text-highlight">Rene Heinzl</span>
   </h1>
   <div
-    class="cards hidden lg:flex relative flex-col md:flex-row justify-between md:justify-center items-center md:items-start xl:w-[40rem] h-[40rem]"
+    class="cards hidden lg:flex relative flex-col md:flex-row justify-between md:justify-center items-center md:items-start xl:w-[40rem] h-[40rem] 2xl:w-[50rem]"
   >
     <about-card
       *ngFor="let card of data; let id = index"
       [card]="card"
       [ngStyle]="{ zIndex: card.show ? 5 : data.length - id }"
-      (setShow)="handleShow(id)"
+      (setShow)="handleShow($event)"
+      (setCard)="handleCard($event)"
     ></about-card>
   </div>
 
