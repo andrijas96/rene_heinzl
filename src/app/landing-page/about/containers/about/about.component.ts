@@ -5,24 +5,33 @@ import {
   Input,
   ViewChild,
   ElementRef,
+  ViewChildren,
+  QueryList,
+  AfterContentInit,
 } from '@angular/core';
 import { AboutCard } from '../../models/about-card.interface';
 
 import { register } from 'swiper/element/bundle';
+import { AboutCardComponent } from '../../components/about-card/about-card.component';
 
 @Component({
   selector: 'about',
   templateUrl: './about.component.html',
 })
-export class AboutComponent implements OnInit, AfterViewInit {
+export class AboutComponent implements OnInit, AfterViewInit, AfterContentInit {
   @ViewChild('swiper')
   swiperRef: ElementRef | undefined;
   @ViewChild('prev')
   prevRef: ElementRef | undefined;
   @ViewChild('next')
   nextRef: ElementRef | undefined;
+  @ViewChild('cards')
+  cardsRef: ElementRef | undefined;
 
   constructor(public el: ElementRef) {}
+
+  changes: any = this.el;
+  detectedChange: boolean = false;
 
   data: AboutCard[] = [
     {
@@ -56,6 +65,11 @@ export class AboutComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     register();
+  }
+
+  ngAfterContentInit(): void {
+    // Detect Changes To Class
+    this.detectLoad();
   }
 
   changeSlide(direction: string) {
@@ -101,5 +115,35 @@ export class AboutComponent implements OnInit, AfterViewInit {
       this.handleShow(this.currentId);
     }, 400);
     // console.log('handleCard: ', event);
+  }
+
+  borderPulseAnimation() {
+    let firstChild =
+      this.cardsRef?.nativeElement.children[0].children[0].querySelector(
+        '.img-container'
+      );
+
+    firstChild.classList.add('animate-borderChange');
+  }
+
+  detectLoad() {
+    this.changes = new MutationObserver((mutations: MutationRecord[]) => {
+      mutations.forEach((mutation: MutationRecord) => {
+        // Regex Test For opacity
+        if (
+          /(opacity-1)/i.test(this.el.nativeElement.classList.toString()) &&
+          !this.detectedChange
+        ) {
+          this.detectedChange = true;
+          this.borderPulseAnimation();
+          this.changes.disconnect();
+        }
+      });
+    });
+    this.changes.observe(this.el.nativeElement, {
+      attributeFilter: ['class'],
+    });
+
+    // Border Change For First Card
   }
 }

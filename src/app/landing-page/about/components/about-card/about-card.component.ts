@@ -1,11 +1,18 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  Output,
+  EventEmitter,
+  AfterViewInit,
+} from '@angular/core';
 import { AboutCard } from '../../models/about-card.interface';
 
 @Component({
   selector: 'about-card',
   templateUrl: './about-card.component.html',
 })
-export class AboutCardComponent implements OnInit {
+export class AboutCardComponent implements OnInit, AfterViewInit {
   @Input()
   card!: AboutCard;
 
@@ -18,6 +25,8 @@ export class AboutCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  ngAfterViewInit(): void {}
 
   onShow(id: number) {
     this.card.show ? (this.card.show = false) : this.setShow.emit(id);

@@ -21,7 +21,6 @@ export class CoreComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    console.log(this.children);
     this.children?.forEach((el: ElementRef) => {
       el.nativeElement.className =
         'opacity-0 translate-y-[5%] transition-all duration-700';
@@ -32,7 +31,7 @@ export class CoreComponent implements OnInit, AfterViewInit {
     this.children?.forEach((el: ElementRef) => {
       const componentPosition = el.nativeElement.offsetTop;
       const scrollPosition = window.pageYOffset;
-      if (scrollPosition >= componentPosition - 250) {
+      if (scrollPosition >= componentPosition - 450) {
         el.nativeElement.className =
           'opacity-1 translate-y-0 transition-all duration-700';
       } else {

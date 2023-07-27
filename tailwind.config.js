@@ -40,6 +40,7 @@ module.exports = {
         acMoveOut1: 'acMoveOut1 0.3s linear  ',
         acMoveOut2: 'acMoveOut2 0.3s linear ',
         acMoveOut3: 'acMoveOut3 0.3s linear ',
+        borderChange: 'borderChange 1s ease 1s  2',
       },
       keyframes: {
         myMoveInOne: {
@@ -162,6 +163,18 @@ module.exports = {
           '100%': {
             left: '66%',
             transform: 'scale(1)',
+          },
+        },
+
+        borderChange: {
+          '0%': {
+            borderColor: '#C689C6',
+          },
+          '50%': {
+            borderColor: '#FF8C2D',
+          },
+          '100%': {
+            borderColor: '#C689C6',
           },
         },
       },

@@ -21,13 +21,20 @@
     />
   </div>
   <div
-    class="img-container z-10 w-20 h-96 2xl:h-[34rem] md:w-64 2xl:w-80 -ml-2 rounded-[11rem] overflow-hidden cursor-pointer"
-    [ngClass]="[
-      card.show
-        ? ' border-2 md:border-4 border-' + card.color
-        : ' border-2 md:border-4 border-primary/75 hover:brightness-[0.8] hover:shadow-[0_0.2vw_3.8vw_rgba(0,120,255,1.5)]'
-    ]"
+    class="img-container z-10 w-20 h-96 2xl:h-[34rem] md:w-64 2xl:w-80 -ml-2 border-2 md:border-4 rounded-[11rem] overflow-hidden cursor-pointer transition-[border] duration-200 delay-200"
     (click)="onShow(card.id)"
+    [ngClass]="[
+      card.show && card.id == 0
+        ? 'border-cube-orange'
+        : 'hover:brightness-[0.8] hover:shadow-[0_0.2vw_3.8vw_rgba(0,120,255,1.5)]',
+      card.show && card.id == 1
+        ? 'border-cube-blau'
+        : 'hover:brightness-[0.8] hover:shadow-[0_0.2vw_3.8vw_rgba(0,120,255,1.5)]',
+      card.show && card.id == 2
+        ? 'border-cube-rot'
+        : 'hover:brightness-[0.8] hover:shadow-[0_0.2vw_3.8vw_rgba(0,120,255,1.5)]',
+      !card.show ? 'border-primary/75' : ''
+    ]"
   >
     <img
       class="w-full h-full object-cover pointer-events-none"
