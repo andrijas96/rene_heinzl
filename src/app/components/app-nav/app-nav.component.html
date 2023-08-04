@@ -1,5 +1,5 @@
 <div
-  class="nav-wrap fixed z-20 top-0 flex justify-between items-center w-screen h-16 2xl:h-32 md:h-24 bg-[#00040A]"
+  class="nav-wrap fixed z-20 top-0 flex justify-between items-center w-screen h-16 md:h-24 bg-[#00040A]"
 >
   <div
     class="img-container flex justify-center items-center h-full w-44 md:w-80 xl:w-96 mx-4 xl:mx-14"
@@ -7,15 +7,21 @@
     <img class="" src="../../../assets/rh_logo_w.png" alt="" />
   </div>
   <div
-    class="link-container fixed lg:static inset-0 flex flex-col lg:flex-row justify-evenly items-center w-screen h-screen lg:w-1/2 lg:h-full 2xl:mx-14 bg-[#00040A] py-16 lg:py-0 font-SpaceGrotesk text-white text-3xl md:text-5xl lg:text-lg xl:text-xl 2xl:text-3xl lg:translate-x-0 overflow-hidden transition-transform duration-300 ease-in"
+    class="link-container fixed lg:static inset-0 flex flex-col lg:flex-row justify-evenly items-center w-screen h-screen lg:w-1/2 lg:h-full 2xl:mx-14 bg-[#00040A] py-16 lg:py-0 font-SpaceGrotesk text-white text-3xl md:text-5xl lg:text-lg xl:text-xl lg:translate-x-0 overflow-hidden transition-transform duration-300 ease-in"
     [ngClass]="show ? 'translate-x-0' : 'translate-x-full'"
   >
-    <a
+    <div
       *ngFor="let link of links"
       (click)="navigateToSection(link)"
       class="cursor-pointer hover:text-primary/75"
-      >{{ link[0].toUpperCase() + link.slice(1, link.length) }}</a
+      [ngClass]="{ 'text-primary/75': link == activeLink }"
     >
+      <a>{{ link[0].toUpperCase() + link.slice(1, link.length) }}</a>
+      <div
+        class="line h-0.5 bg-primary/75"
+        [ngClass]="link == activeLink ? 'w-full' : 'w-0'"
+      ></div>
+    </div>
 
     <button
       (click)="navigateToSection('contact')"

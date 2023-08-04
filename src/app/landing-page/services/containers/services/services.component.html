@@ -2,12 +2,12 @@
   class="services-wrap relative flex flex-col justify-center items-center w-screen my-20 xl:mt-60 2xl:mt-96 2xl:mb-32"
 >
   <h2
-    class="w-10/12 absolute xl:hidden top-0 md:w-full mb-4 md:mb-12 font-walter text-xl md:text-3xl lg:text-5xl text-center"
+    class="mobile w-10/12 absolute xl:hidden top-0 md:w-full mb-4 md:mb-12 font-walter text-xl md:text-3xl lg:text-5xl text-center"
   >
     Services
   </h2>
   <div
-    class="anchor absolute top-0 md:top-[-20%] xl:-top-1/2 2xl:top-[-80%]"
+    class="anchor absolute top-0 md:top-[-20%] lg:-top-1/2 2xl:top-[-80%]"
     id="services"
   ></div>
 
@@ -18,19 +18,21 @@
       class="info-container z-10 flex flex-col justify-start items-center h-1/2"
     >
       <div
-        class="card relative flex flex-col justify-start w-11/12 md:w-[28rem] xl:w-[36rem] 2xl:w-[42rem] px-6 md:px-10 xl:px-14 py-4 md:py-7 xl:py-10 border border-primary/50 rounded-3xl bg-[rgba(21,40,63,0.8)] shadow-[0px_0px_128px_rgba(0,120,255,0.25)] backdrop-blur translate-x-0 md:translate-x-[5%]"
+        class="card relative flex flex-col justify-start w-11/12 md:w-[33rem] xl:w-[36rem] 2xl:w-[42rem] px-6 md:px-10 xl:px-14 py-4 md:py-7 xl:py-10 border border-primary/50 rounded-3xl bg-[rgba(21,40,63,0.8)] shadow-[0px_0px_128px_rgba(0,120,255,0.25)] backdrop-blur translate-x-0 md:translate-x-[5%]"
       >
         <h2
-          class="w-10/12 absolute -top-[20%] left-[2%] md:w-full mb-4 md:mb-12 font-walter text-xl md:text-3xl lg:text-5xl text-left"
+          class="desktop w-10/12 absolute -top-[20%] left-[2%] md:w-full font-walter text-xl md:text-3xl lg:text-4xl 2xl:text-5xl text-left"
         >
           Services
         </h2>
         <div class="card-title text-lg md:text-2xl lg:text-4xl 2xl:text-5xl">
           {{ currentService.title }}
           <div
-            class="card-title-info flex items-center my-3 text-base md:text-lg lg:text-xl xl:text-2xl uppercase"
+            class="card-title-info flex items-center my-1 text-base md:text-lg lg:text-xl xl:text-2xl uppercase"
           >
-            <div class="logo-container w-16 h-16 mr-4">
+            <div
+              class="logo-container lg:w-10 lg:h-10 2xl:w-16 2xl:h-16 mr-2 2xl:mr-4"
+            >
               <img
                 [src]="currentLogo"
                 class="h-full w-full transition-all duration-200 ease-in"
@@ -42,17 +44,17 @@
           </div>
         </div>
         <p
-          class="info xl:h-64 2xl:h-80 text-sm xl:text-lg 2xl:text-2xl leading-10"
+          class="info lg:h-64 py-5 text-sm lg:text-lg 2xl:text-xl leading-[1.7] 2xl:leading-[1.7]"
         >
           {{ currentService.info[nextInfo ? 0 : 1] }}
         </p>
 
-        <div
-          class="next absolute right-4 bottom-4 xl:right-8 xl:bottom-8 text-sm md:text-base lg:text-xl xl:text-xl 2xl:text-2xl uppercase cursor-pointer hover:text-primary/75"
+        <button
+          class="next absolute right-4 bottom-4 xl:right-8 xl:bottom-8 text-sm md:text-base uppercase cursor-pointer hover:text-primary/75"
           (click)="nextInfo = !nextInfo"
         >
           {{ nextInfo ? 'Next' : 'Back' }}
-        </div>
+        </button>
       </div>
     </div>
     <div
